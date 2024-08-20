@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Blog Form</title>
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/menuAnimation.css">
+</head>
+<style>
+    .ck-editor__editable{
+        min-height: 200px;
+    }
+</style>
+<body class="flex flex-col items-center dark:bg-purpleScale90">
+    <nav id="Dekstop" class="xl:flex justify-between items-center w-full px-20 py-8 hidden">
+        <h1 class="font-poppins font-bold text-[40px] text-[#7E57A3]">MULFU</h1>
+        <div class="border border-[#24192E] rounded-xl py-[15px] px-[22px] flex gap-[14px] justify-start items-center w-[670px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                <path d="M21 21l-6 -6" />
+            </svg>
+            <input placeholder="Search..." class="focus:outline-none">
+        </div>
+        <button id="dropdown1" class="relative flex justify-between items-center gap-[10px] cursor-pointer">
+            <div class="w-[30px] h-[30px] bg-[#D9D9D9] rounded-full"></div>
+            <p>Awaka</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down transition-transform duration-200" id="dropdownIcon">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M6 9l6 6l6 -6"/>
+            </svg>
+            <div id="dropdownMenu" class="hidden absolute mt-[100px] w-fit px-8 border border-gray-200 bg-red-500 rounded-lg shadow-lg z-10">
+                <ul class="list-none p-2 m-0">
+                    <li><a href="#" class="block px-4 py-2 font-bold text-white">Logout</a></li>
+                </ul>
+            </div>
+    </nav>
+    <nav id="Mobile" class="xl:hidden justify-between items-center w-full px-5 py-8 flex-col ">
+        <div class="flex justify-between items-center">
+            <h1 class="font-poppins font-bold text-[32px] text-[#7E57A3]">MULFU</h1>
+            <button id="dropdown2" class="relative flex justify-between items-center gap-[4px] cursor-pointer">
+                <div class="w-[30px] h-[30px] bg-[#D9D9D9] rounded-full"></div>
+                <p>AwAkA</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down transition-transform duration-200" id="dropdownIcon">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6 9l6 6l6 -6"/>
+                </svg>
+                <div id="dropdownMenu" class="hidden absolute mt-[100px] mr-10 w-fit px-4 border border-gray-200 bg-red-500 rounded-lg shadow-lg z-10">
+                    <ul class="list-none p-2 m-0">
+                        <li><a href="#" class="block px-4 py-2 font-bold text-white">Logout</a></li>
+                    </ul>
+                </div>
+            </button>
+        </div>
+        <div class="border border-[#24192E] rounded-xl py-[15px] px-[22px] flex gap-[14px] justify-start items-center w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                <path d="M21 21l-6 -6" />
+            </svg>
+            <input placeholder="Search..." class="focus:outline-none">
+        </div>
+    </nav>
+    <div class="py-4 border-y w-full lg:px-20 px-5 border-[#8E8E8E]">
+        <button type="button" class="px-[32px] py-[16px] bg-[#7E57A3] rounded-xl text-white font-bold">Blog</button>
+    </div>
+    <section class="w-full lg:px-[120px] py-10 px-5">
+            <div class="border md:p-5 p-3 flex flex-col rounded-xl gap-3">
+                <div class="flex bg-[#7E57A3] text-white rounded-xl px-5 justify-between bg-cover bg-center sm:flex-row flex-col" style="background-image: url('/assets/Form Bg Blog.png');">
+                    <div class="flex flex-col py-6 gap-2">
+                        <h1 class="font-poppins font-bold text-4xl">Blog</h1>
+                        <p class="font-medium text-xl">Dengan membuat blog kamu dapat menyampaikan ide atau informasi pada banyak orang</p>
+                    </div>
+                    <img class="md:w-[368px] md:h-[250px] sm:w-[200px] sm:w[150px] " src="/assets/Parafrase Maskot.png">
+                </div>
+                <div id="Input" class="flex flex-col gap-2">
+                    <p class="font-poppins font-bold text-lg">Judul</p>
+                    <input placeholder="Nama File" class="border p-4 rounded-xl border-[#5A3E74]">
+                </div>
+                <div class="flex flex-col items-start justify-center w-full gap-2">
+                    <p class="font-poppins font-bold text-lg">Gambar</p>
+                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <div id="file-dropzone" class="flex flex-col items-center justify-center pt-5 pb-6 gap-3">
+                            <img id="file-image" class="hidden w-24 h-24 object-cover rounded-md" alt="Preview"/>
+                            <svg id="file-icon" class="opacity-80" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-upload">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                                <path d="M12 11v6" />
+                                <path d="M9.5 13.5l2.5 -2.5l2.5 2.5" />
+                            </svg>
+                            <p id="file-label" class="mb-2 text-sm text-gray-500 dark:text-gray-400">Klik atau Seret File ke sini</p>
+                        </div>
+                        <input id="dropzone-file" type="file" class="hidden" accept="image/*"/>
+                    </label>
+                </div>
+                <p class="font-poppins font-bold text-lg">Deskripsi</p>
+                <textarea id="editor" class="rounded-xl"></textarea>              
+            </div>  
+    </section>
+    <footer class="desktop:px-20 mobile:px-5 py-10 bg-purpleScale80 w-full">
+        <div class="flex desktop:flex-row mobile:flex-col justify-between">
+            <div>
+                <img src="../../assets/Logo.png">
+                <p class="mt-4 font-poppins text-Base/Medium text-purpleScale0">Subsidiaries of Mulfubot, company registered in Indonesia.</p>
+            </div>
+            <div class="desktop:px-10 flex desktop:flex-row mobile:flex-col gap-4 py-4">
+                <div class="flex flex-col">
+                    <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">ADDRESS</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular max-w-[400px]">Jl. Akses UI No.94, Kel. Tugu, Kec. Cimanggis Kota Depok, Jawa Barat, 16451</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="font-poppins text-purpleScale0 text-Large/Reguler">Contact</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Email: mulfubot@gmail.com</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Phone: +62 1234 5678 90</p>
+                </div>
+            </div>
+            <div class="desktop:px-10 py-4">
+                <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">Follow Us</p>
+                <div class="grid grid-cols-3 gap-x-4">
+                    <img src="../../assets/tabler-icon-brand-instagram.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-x.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-facebook.svg" class="size-10">
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-solid border-purpleScale0 mt-3 mobile:hidden"></div>
+        <div class="my-4">
+            <div class="desktop:h-[84px] flex desktop:justify-between desktop:items-center desktop:flex-row mobile:flex-col">
+                <div class="flex mobile:mb-6 mobile:justify-between">
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0 desktop:mr-8">Terms of Service</p>
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0">Privacy Policy</p>
+                </div>
+                <p class="font-poppins text-Base/Regular text-purpleScale0">Copyright © 2024 MULFUBOT · All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../script/index.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.js",
+                "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/43.0.0/"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import {
+            ClassicEditor,
+            Essentials,
+            Bold,
+            Italic,
+            Font,
+            Paragraph
+        } from 'ckeditor5';
+
+        ClassicEditor
+            .create( document.querySelector( '#editor' ), {
+                width: '100%',
+                plugins: [ Essentials, Bold, Italic, Font, Paragraph ],
+                toolbar: {
+                    items: [
+                        'undo', 'redo', '|', 'bold', 'italic', '|',
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                    ]
+                }
+            } )
+            .then( /* ... */ )
+            .catch( /* ... */ );
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const dropdown1 = document.getElementById("dropdown1");
+        const dropdownMenu1 = dropdown1.querySelector("#dropdownMenu");
+        const dropdownIcon1 = dropdown1.querySelector("#dropdownIcon");
+
+        dropdown1.addEventListener("click", function() {
+            dropdownMenu1.classList.toggle("hidden");
+            dropdownIcon1.classList.toggle("rotate-180");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!dropdown1.contains(event.target)) {
+                dropdownMenu1.classList.add("hidden");
+                dropdownIcon1.classList.remove("rotate-180");
+            }
+        });
+
+        const dropdown2 = document.getElementById("dropdown2");
+        const dropdownMenu2 = dropdown2.querySelector("#dropdownMenu");
+        const dropdownIcon2 = dropdown2.querySelector("#dropdownIcon");
+
+        dropdown2.addEventListener("click", function() {
+            dropdownMenu2.classList.toggle("hidden");
+            dropdownIcon2.classList.toggle("rotate-180");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!dropdown2.contains(event.target)) {
+                dropdownMenu2.classList.add("hidden");
+                dropdownIcon2.classList.remove("rotate-180");
+            }
+        });
+    });
+
+        document.getElementById('dropzone-file').addEventListener('change', function(event) {
+            const fileLabel = document.getElementById('file-label');
+            const fileIcon = document.getElementById('file-icon');
+            const fileImage = document.getElementById('file-image');
+            const file = event.target.files[0];
+    
+            if (file) {
+                fileLabel.textContent = file.name;
+    
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    fileImage.src = e.target.result;
+                    fileImage.classList.remove('hidden');
+                    fileIcon.classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                fileLabel.textContent = 'Klik atau Seret File ke sini';
+                fileImage.classList.add('hidden');
+                fileIcon.classList.remove('hidden');
+                fileImage.src = '';  
+            }
+        });
+    </script>
+</body>
+</html>

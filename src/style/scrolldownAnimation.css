@@ -1,0 +1,54 @@
+#plusQnA{
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+#horizontal{
+    width: 20px;
+    height: 2px;
+    position: absolute;
+}
+
+#vertical{
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    rotate: 90deg;
+}
+
+.closed {
+    div{
+        #vertical{
+          transition: all 0.5s ease-in-out;
+          transform: rotate(-90deg);
+        }
+    }
+}
+
+.opened {
+    div{
+        #vertical {
+            transition: all 0.5s ease-in-out;
+            transform: rotate(0deg);
+        }
+    }
+}
+
+.barOpen{
+    transition: all 0.5s ease-in-out;
+    transform: height(auto);
+}
+
+.AnswerOpen{
+    display: block;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1,1);
+}
+
+.AnswerClose{
+    display: none;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1,0);
+}

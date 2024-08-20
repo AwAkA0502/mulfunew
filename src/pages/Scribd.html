@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Cek Pesanan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/Scribd.css">
+</head>
+<body class="flex flex-col dark:bg-purpleScale90 justify-center items-center gap-10">
+    <div class="flex desktop:flex-row mobile:flex-col-reverse justify-between w-full desktop:px-5 mobile:px-2 py-5 h-screen mobile:gap-3">
+        <div class="absolute flex flex-col gap-2 desktop:top-[50px] mobile:top-[320px] left-9 desktop:h-[90%] mobile:h-[20%] justify-between items-start">
+            <div class="flex flex-col">
+                <button class="p-2 bg-purpleScale50 rounded-lg mb-3 z-10">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                        <path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
+                </button>
+                <button class="p-2 bg-purpleScale50 rounded-lg mb-3 z-10">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-printer"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17 17h2a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h2" /><path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
+                        <path d="M7 13m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" /></svg>
+                </button>
+            </div>
+            <div class="slider-container z-10 bg-purpleScale50 w-[30px] desktop:flex flex-col justify-between items-center h-[180px] rounded-xl py-2 px-5 mobile:hidden">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-in"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                    <path d="M7 10l6 0" /><path d="M10 7l0 6" /><path d="M21 21l-6 -6" /></svg>
+                <input type="range" id="zoomSlider" min="50" max="100" step="1" value="100" class="-rotate-90">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-out"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                    <path d="M7 10l6 0" /><path d="M21 21l-6 -6" /></svg>
+            </div>
+        </div>
+        <div class="w-full flex-col bg-slate-300 justify-start items-center flex p-2 gap-5 scroll-auto overflow-y-auto mr-3 rounded-xl h-full">
+            <div class="image-container flex justify-center items-center w-full">
+                <img src="https://mulfu.co/new-assets/images/page1.jpeg" class="zoomable" id="myImage1">
+                <div class="highlight-layer" id="highlightLayer1"></div>
+            </div>
+            <div class="image-container flex justify-center items-center w-full">
+                <img src="https://mulfu.co/new-assets/images/page1.jpeg" class="zoomable" id="myImage2">
+                <div class="highlight-layer" id="highlightLayer2"></div>
+            </div>
+            <div class="image-container flex justify-center items-center w-full">
+                <img src="https://mulfu.co/new-assets/images/page1.jpeg" class="zoomable" id="myImage3">
+                <div class="highlight-layer" id="highlightLayer3"></div>
+            </div>
+            <div class="image-container flex justify-center items-center w-full">
+                <img src="https://mulfu.co/new-assets/images/page1.jpeg" class="zoomable" id="myImage4">
+                <div class="highlight-layer" id="highlightLayer3"></div>
+            </div>
+            <div class="image-container flex justify-center items-center w-full">
+                <img src="https://mulfu.co/new-assets/images/page1.jpeg" class="zoomable" id="myImage5">
+                <div class="highlight-layer" id="highlightLayer3"></div>
+            </div>
+        </div>
+        <div class="desktop:flex flex-col desktop:w-[510px] mobile:w-full gap-3  max-h-fit">
+            <div class="desktop:px-8 mobile:px-2 bg-purpleScale50 flex flex-col justify-between items-center gap-3 py-4 rounded-[12px] max-h-fit">
+                <div class="flex desktop:justify-center mobile:justify-between items-center w-full">
+                    <div class="w-[24px] desktop:hidden mobile:flex"></div>
+                    <h1 class="font-semibold text-base text-white">Plagiasi Score</h1>
+                    <button id="menuButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="desktop:hidden mobile:flex" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-wrapper">
+                    <div class="single-chart-main">
+                        <svg viewBox="0 0 36 36" class="circular-chart purple" width="100%" height="100%">
+                            <path class="circle-bg"
+                                  d="M18 2.0845
+                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="circle"
+                                  stroke-dasharray="30, 100"
+                                  d="M18 2.0845
+                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <text x="18" y="20.35" class="percentage">30%</text>
+                        </svg>
+                    </div>
+                </div>
+                <h1 class="font-semibold text-base text-white">Overall Similarity</h1>
+                <div id="overlay" class="overlayHidden fixed top-0 left-0 w-full h-full bg-black opacity-50 z-[50] transition-opacity duration-300"></div>
+                <div id="menuBar" class="menuClosed fixed top-0 right-0 w-[100%] h-screen overflow-y-auto mr-0 bg-slate-100 dark:bg-purpleScale80 z-[60] gap-2 opacity-0 px-2 flex flex-col justify-start transition-all duration-300">
+                    <div class="flex flex-col justify-center items-center bg-purpleScale60 p-2 mt-2 rounded-xl">
+                        <div class="flex justify-between w-full">
+                            <div class="w-[24px]"></div>
+                            <h1 class="font-semibold text-base text-white">Plagiasi Score</h1>
+                            <button id="closeButton">
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+                            </button>
+                        </div>
+                        <div class="flex-wrapper">
+                            <div class="single-chart-main">
+                                <svg viewBox="0 0 36 36" class="circular-chart purple" width="100%" height="100%">
+                                    <path class="circle-bg"
+                                          d="M18 2.0845
+                                             a 15.9155 15.9155 0 0 1 0 31.831
+                                             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle"
+                                          stroke-dasharray="30, 100"
+                                          d="M18 2.0845
+                                             a 15.9155 15.9155 0 0 1 0 31.831
+                                             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage">30%</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <h1 class="font-semibold text-base text-white">Overall Similarity</h1>
+                    </div>
+                    <div class="flex flex-col gap-3 overflow-y-auto ">
+                        <div class="flex flex-col rounded-xl justify-start items-center gap-3 container1 bg-purpleScale50 w-full" onclick="toggleContent(event)">
+                            <div class="flex justify-between items-center gap-2 rounded-xl pl-2 ">
+                                <div class="flex flex-col gap-1 w-[240px]">
+                                    <p class="font-semibold text-lg text-red-500">Tai.com</p>
+                                    <a href="https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf" class="text-blue-400 overflow-hidden truncate">https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf</a>
+                                </div>
+                                <div class="flex-wrapper">
+                                    <div class="single-chart">
+                                        <svg viewBox="0 0 36 36" class="circular-chart red" width="100%" height="100%">
+                                            <path class="circle-bg"
+                                                  d="M18 2.0845
+                                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                            <path class="circle"
+                                                  stroke-dasharray="30, 100"
+                                                  d="M18 2.0845
+                                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                            <text x="18" y="20.35" class="percentage-red">30%</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider flex items-center space-x-4 hidden">
+                                <button class="slider-prev px-4 py-2 z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M15 6l-6 6l6 6" />
+                                    </svg>
+                                </button>
+                                <span class="page-number text-white">1 of 3</span>
+                                <button class="slider-next px-4 py-2 z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M9 6l6 6l-6 6" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="content-container w-full hidden px-4 py-2">
+                                <div class="content w-full" data-index="1">
+                                    <p class="text-lg text-purpleScale0">nd point e.g., domestic aquaria and ponds. On a worldwide basis, the legal and legitimate ornamental aquatic trade is subject to regulation and monitoring throughout the majority of its supply chain. Approximately 90% of ornamental freshwater fish species traded are captive-bred, but, due to their complex breeding cycles, 90-95% of ornamental marine fish species are wild-caught. The ornamental aquatic industry and consumers therefore have a responsibility to ensure that wild-caught species are sourced sustainably, legally and to good welfare standards. Such good practice sh</p>
+                                </div>
+                                <div class="content hidden w-full" data-index="2">
+                                    <p class="text-lg text-purpleScale0">l tetra Paracheirodon axelrodi (Schultz 1956) in the upper Ori- noco and Rio Negro Rivers in South America and their gradual replacement by cultured animals from Asia and the Czech Republic; (b) over-exploitation of the zebra pleco Hypancistrus zebra Isbrücker & Nijssen 1991 from the Xingu River, a tributary of the Amazon Basin, and recent efforts to aid conservation of this endangered species; (c) efforts to breed and rear clown loach Chromobotia macracanthus (Bleeker 1852) in captivity, to alleviate pressures on wild</p>
+                                </div>
+                                <div class="content hidden w-full" data-index="3">
+                                    <p class="text-lg text-purpleScale0">personal response in science, as well as conservation. In addition, artistic expression and innovation intersect with scientific knowledge and application to create beautiful, biodiverse, ecosystems. Through the process of successfully maintaining an aquarium, continued participation leads to a proficiency in applicable scientific facts, a better understanding of scientific processes, and an improved conservation ethic for aquatic resources. Further, this intersectionality motivates participation by providing new challenges and various forms of satisfaction. The human dimensions of the aquarium hobby and the values of aquarists are impo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col rounded-xl justify-start items-center gap-3 container1 bg-purpleScale10 drop-shadow w-full" onclick="toggleContent(event)">
+                            <div class="flex justify-between items-center gap-2 rounded-xl pl-2 ">
+                                <div class="flex flex-col gap-1 w-[240px]">
+                                    <p class="font-semibold text-lg text-blue-600">Tai.com</p>
+                                    <a href="https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf" class="text-blue-400 overflow-hidden truncate">https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf</a>
+                                </div>
+                                <div class="flex-wrapper">
+                                    <div class="single-chart">
+                                        <svg viewBox="0 0 36 36" class="circular-chart blue" width="100%" height="100%">
+                                            <path class="circle-bg"
+                                                  d="M18 2.0845
+                                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                            <path class="circle"
+                                                  stroke-dasharray="30, 100"
+                                                  d="M18 2.0845
+                                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                            <text x="18" y="20.35" class="percentage-blue">30%</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider flex items-center space-x-4 hidden">
+                                <button class="slider-prev px-4 py-2 z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M15 6l-6 6l6 6" />
+                                    </svg>
+                                </button>
+                                <span class="page-number text-white">1 of 3</span>
+                                <button class="slider-next px-4 py-2 z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M9 6l6 6l-6 6" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="content-container w-full hidden px-4 py-2">
+                                <div class="content w-full" data-index="1">
+                                    <p class="text-lg text-purpleScale0">nd point e.g., domestic aquaria and ponds. On a worldwide basis, the legal and legitimate ornamental aquatic trade is subject to regulation and monitoring throughout the majority of its supply chain. Approximately 90% of ornamental freshwater fish species traded are captive-bred, but, due to their complex breeding cycles, 90-95% of ornamental marine fish species are wild-caught. The ornamental aquatic industry and consumers therefore have a responsibility to ensure that wild-caught species are sourced sustainably, legally and to good welfare standards. Such good practice sh</p>
+                                </div>
+                                <div class="content hidden w-full" data-index="2">
+                                    <p class="text-lg text-purpleScale0">l tetra Paracheirodon axelrodi (Schultz 1956) in the upper Ori- noco and Rio Negro Rivers in South America and their gradual replacement by cultured animals from Asia and the Czech Republic; (b) over-exploitation of the zebra pleco Hypancistrus zebra Isbrücker & Nijssen 1991 from the Xingu River, a tributary of the Amazon Basin, and recent efforts to aid conservation of this endangered species; (c) efforts to breed and rear clown loach Chromobotia macracanthus (Bleeker 1852) in captivity, to alleviate pressures on wild</p>
+                                </div>
+                                <div class="content hidden w-full" data-index="3">
+                                    <p class="text-lg text-purpleScale0">personal response in science, as well as conservation. In addition, artistic expression and innovation intersect with scientific knowledge and application to create beautiful, biodiverse, ecosystems. Through the process of successfully maintaining an aquarium, continued participation leads to a proficiency in applicable scientific facts, a better understanding of scientific processes, and an improved conservation ethic for aquatic resources. Further, this intersectionality motivates participation by providing new challenges and various forms of satisfaction. The human dimensions of the aquarium hobby and the values of aquarists are impo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col rounded-xl justify-start items-center gap-3 container1 bg-purpleScale50 w-full" onclick="toggleContent(event)">
+                            <div class="flex justify-between items-center gap-2 rounded-xl pl-2 ">
+                                <div class="flex flex-col gap-1 w-[240px]">
+                                    <p class="font-semibold text-lg text-red-600">Taii.com</p>
+                                    <a href="https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf" class="text-blue-400 overflow-hidden truncate">https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf</a>
+                                </div>
+                                <div class="flex-wrapper">
+                                    <div class="single-chart">
+                                        <svg viewBox="0 0 36 36" class="circular-chart red" width="100%" height="100%">
+                                            <path class="circle-bg"
+                                                  d="M18 2.0845
+                                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                            <path class="circle"
+                                                  stroke-dasharray="30, 100"
+                                                  d="M18 2.0845
+                                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                                     a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                            <text x="18" y="20.35" class="percentage-red">30%</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider flex items-center space-x-4 hidden">
+                                <button class="slider-prev px-4 py-2 z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M15 6l-6 6l6 6" />
+                                    </svg>
+                                </button>
+                                <span class="page-number text-white">1 of 3</span>
+                                <button class="slider-next px-4 py-2 z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M9 6l6 6l-6 6" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="content-container w-full hidden px-4 py-2">
+                                <div class="content w-full" data-index="1">
+                                    <p class="text-lg text-purpleScale0">nd point e.g., domestic aquaria and ponds. On a worldwide basis, the legal and legitimate ornamental aquatic trade is subject to regulation and monitoring throughout the majority of its supply chain. Approximately 90% of ornamental freshwater fish species traded are captive-bred, but, due to their complex breeding cycles, 90-95% of ornamental marine fish species are wild-caught. The ornamental aquatic industry and consumers therefore have a responsibility to ensure that wild-caught species are sourced sustainably, legally and to good welfare standards. Such good practice sh</p>
+                                </div>
+                                <div class="content hidden w-full" data-index="2">
+                                    <p class="text-lg text-purpleScale0">l tetra Paracheirodon axelrodi (Schultz 1956) in the upper Ori- noco and Rio Negro Rivers in South America and their gradual replacement by cultured animals from Asia and the Czech Republic; (b) over-exploitation of the zebra pleco Hypancistrus zebra Isbrücker & Nijssen 1991 from the Xingu River, a tributary of the Amazon Basin, and recent efforts to aid conservation of this endangered species; (c) efforts to breed and rear clown loach Chromobotia macracanthus (Bleeker 1852) in captivity, to alleviate pressures on wild</p>
+                                </div>
+                                <div class="content hidden w-full" data-index="3">
+                                    <p class="text-lg text-purpleScale0">personal response in science, as well as conservation. In addition, artistic expression and innovation intersect with scientific knowledge and application to create beautiful, biodiverse, ecosystems. Through the process of successfully maintaining an aquarium, continued participation leads to a proficiency in applicable scientific facts, a better understanding of scientific processes, and an improved conservation ethic for aquatic resources. Further, this intersectionality motivates participation by providing new challenges and various forms of satisfaction. The human dimensions of the aquarium hobby and the values of aquarists are impo</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="desktop:flex flex-col gap-3 mobile:hidden">
+                <div class="flex flex-col bg-purpleScale10 p-4 rounded-xl w-full justify-center items-center gap-3 container1" onclick="toggleContent(event)">
+                    <div class="flex justify-between items-center gap-2 w-full">
+                        <div class="flex flex-col gap-1 w-[75%]">
+                            <p class="font-semibold text-lg text-red-500">Tai.com</p>
+                            <a href="https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf" class="text-blue-400 truncate">https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf</a>
+                        </div>
+                        <div class="flex-wrapper">
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart red" width="100%" height="100%">
+                                    <path class="circle-bg"
+                                          d="M18 2.0845
+                                             a 15.9155 15.9155 0 0 1 0 31.831
+                                             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle"
+                                          stroke-dasharray="30, 100"
+                                          d="M18 2.0845
+                                             a 15.9155 15.9155 0 0 1 0 31.831
+                                             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage-red">30%</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider flex items-center space-x-4 hidden">
+                        <button class="slider-prev px-4 py-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M15 6l-6 6l6 6" />
+                            </svg>
+                        </button>
+                        <span class="page-number">1 of 3</span>
+                        <button class="slider-next px-4 py-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9 6l6 6l-6 6" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="content-container hidden">
+                        <div class="content" data-index="1">
+                            <p class="text-lg">nd point e.g., domestic aquaria and ponds. On a worldwide basis, the legal and legitimate ornamental aquatic trade is subject to regulation and monitoring throughout the majority of its supply chain. Approximately 90% of ornamental freshwater fish species traded are captive-bred, but, due to their complex breeding cycles, 90-95% of ornamental marine fish species are wild-caught. The ornamental aquatic industry and consumers therefore have a responsibility to ensure that wild-caught species are sourced sustainably, legally and to good welfare standards. Such good practice sh</p>
+                        </div>
+                        <div class="content hidden" data-index="2">
+                            <p class="text-lg">l tetra Paracheirodon axelrodi (Schultz 1956) in the upper Ori- noco and Rio Negro Rivers in South America and their gradual replacement by cultured animals from Asia and the Czech Republic; (b) over-exploitation of the zebra pleco Hypancistrus zebra Isbrücker & Nijssen 1991 from the Xingu River, a tributary of the Amazon Basin, and recent efforts to aid conservation of this endangered species; (c) efforts to breed and rear clown loach Chromobotia macracanthus (Bleeker 1852) in captivity, to alleviate pressures on wild</p>
+                        </div>
+                        <div class="content hidden" data-index="3">
+                            <p class="text-lg">personal response in science, as well as conservation. In addition, artistic expression and innovation intersect with scientific knowledge and application to create beautiful, biodiverse, ecosystems. Through the process of successfully maintaining an aquarium, continued participation leads to a proficiency in applicable scientific facts, a better understanding of scientific processes, and an improved conservation ethic for aquatic resources. Further, this intersectionality motivates participation by providing new challenges and various forms of satisfaction. The human dimensions of the aquarium hobby and the values of aquarists are impo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-purpleScale10 p-4 rounded-xl w-full justify-center items-center gap-3 container1" onclick="toggleContent(event)">
+                    <div class="flex justify-between items-center gap-2 w-full">
+                        <div class="flex flex-col gap-1 w-[75%]">
+                            <p class="font-semibold text-lg text-blue-500">Tai.com</p>
+                            <a href="https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf" class="text-blue-400 truncate">https://www.scribd.com/document/410974399/SEM-1-2-3-4-5-6-BSc-Chemistry-pdf</a>
+                        </div>
+                        <div class="flex-wrapper">
+                            <div class="single-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart blue" width="100%" height="100%">
+                                    <path class="circle-bg"
+                                          d="M18 2.0845
+                                             a 15.9155 15.9155 0 0 1 0 31.831
+                                             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle"
+                                          stroke-dasharray="30, 100"
+                                          d="M18 2.0845
+                                             a 15.9155 15.9155 0 0 1 0 31.831
+                                             a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.35" class="percentage-blue">20%</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider flex items-center space-x-4 hidden">
+                        <button class="slider-prev px-4 py-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M15 6l-6 6l6 6" />
+                            </svg>
+                        </button>
+                        <span class="page-number">1 of 3</span>
+                        <button class="slider-next px-4 py-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9 6l6 6l-6 6" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="content-container hidden">
+                        <div class="content" data-index="1">
+                            <p class="text-lg">nd point e.g., domestic aquaria and ponds. On a worldwide basis, the legal and legitimate ornamental aquatic trade is subject to regulation and monitoring throughout the majority of its supply chain. Approximately 90% of ornamental freshwater fish species traded are captive-bred, but, due to their complex breeding cycles, 90-95% of ornamental marine fish species are wild-caught. The ornamental aquatic industry and consumers therefore have a responsibility to ensure that wild-caught species are sourced sustainably, legally and to good welfare standards. Such good practice sh</p>
+                        </div>
+                        <div class="content hidden" data-index="2">
+                            <p class="text-lg">l tetra Paracheirodon axelrodi (Schultz 1956) in the upper Ori- noco and Rio Negro Rivers in South America and their gradual replacement by cultured animals from Asia and the Czech Republic; (b) over-exploitation of the zebra pleco Hypancistrus zebra Isbrücker & Nijssen 1991 from the Xingu River, a tributary of the Amazon Basin, and recent efforts to aid conservation of this endangered species; (c) efforts to breed and rear clown loach Chromobotia macracanthus (Bleeker 1852) in captivity, to alleviate pressures on wild</p>
+                        </div>
+                        <div class="content hidden" data-index="3">
+                            <p class="text-lg">personal response in science, as well as conservation. In addition, artistic expression and innovation intersect with scientific knowledge and application to create beautiful, biodiverse, ecosystems. Through the process of successfully maintaining an aquarium, continued participation leads to a proficiency in applicable scientific facts, a better understanding of scientific processes, and an improved conservation ethic for aquatic resources. Further, this intersectionality motivates participation by providing new challenges and various forms of satisfaction. The human dimensions of the aquarium hobby and the values of aquarists are impo</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <script src="../script/Scribd.js"></script>
+    <script src="../script/index.js"></script>
+    
+</body>
+</html>

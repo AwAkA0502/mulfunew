@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/menuAnimation.css">
+    <link rel="stylesheet" href="../style/color.css">
+    <link rel="stylesheet" href="../style/Transkrip.css">
+</head>
+<body class="flex flex-col items-center dark:bg-purpleScale90">
+    <audio src="../../assets/audio/01 - Fuwa Fuwa Time.mp3" id="audioPlay"></audio>
+    <nav class="backdrop-blur-sm desktop:pt-10 mobile:pt-2 w-full fixed duration-300 bg-white dark:bg-purpleScale90 z-50 flex justify-center bg-opacity-80">
+        <div class="desktop:max-w-[1200px] mobile:w-full mobile:px-5">
+            <div class="flex justify-between items-center">
+                <a class="flex items-center text-textTitleColor" href="../index.html">
+                    <img src="/assets/Logo.png">
+                </a>
+                <div class="mobile:hidden navbarMobile:flex items-center">
+                    <ul class="flex items-center text-purpleScale50 font-header font-semibold text-Large/SemiBold">
+                        <li class="pr-8"><a href="../index.html">Home</a></li>
+                        <li class="pr-8"><a href="../index.html#HowItWorks">Cara Kerja</a></li>
+                        <li class="pr-8"><a href="upload parafrase.html">Parafrase</a></li>
+                        <li><a href="../index.html#question">Pertanyaan</a></li>
+                    </ul>
+                </div>
+                <div class="flex gap-4">
+                    <img id="sun" class="cursor-pointer hidden dark:stroke-white" src="../../assets/sun.svg" alt="">
+                    <img id="moon" class="cursor-pointer hidden dark:stroke-white" src="../../assets/moon.svg" alt="">
+                    <div class="size-7 mobile:flex flex-col justify-around navbarMobile:hidden" onclick="openBar()">
+                        <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                        <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                        <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                    </div>
+                    <a href="cek pesanan.html" class="px-7 rounded-[12px] text-purpleScale0 bg-purpleScale50 py-3 desktop:block mobile:hidden">Cari Pembelian</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="menuBar" class="menuClosed w-screen h-screen mr-[100px] bg-purpleScale10 dark:bg-purpleScale80 fixed z-[60] opacity-0 px-2 flex flex-col justify-between">
+        <div>
+            <div class="py-2 flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="../../assets/Logo.png">
+                </div>
+                <img src="../../assets/tabler-icon-x.png" class="size-10" onclick="closeBar()">
+            </div>
+            <div class="mt-10">
+                <div class="grid grid-rows-5 gap-y-7">
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="../index.html">Home</a></p>
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="../index.html#HowItWorks" onclick="closeBar()">Cara Kerja</a></p>
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="upload parafrase.html">Parafrase</a></p>
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="cek pesanan.html">Cek Pembelian</a></p>
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="../index.html#question" onclick="closeBar()">Pertanyaan</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 dark:border-purpleScale70 border-purpleScale50  border-t-2 mb-[15%]">
+            <a href="upload.html">
+                <button class="bg-[#7E57A3] rounded-[20px] w-full py-3 text-white font-bold font-poppins">Coba Turnitin</button>
+            </a>
+        </div>
+    </div>
+    <section class="w-full flex flex-col h-[800px] justify-center items-center desktop:p-[120px] mobile:p-5">
+        <div class="w-full lg:w-[1200px] bg-purpleScale0 dark:bg-purpleScale80 border border-purpleScale50 rounded-xl p-6 flex flex-col gap-3 shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+            <div class="flex flex-col justify-between items-center md:flex-row gap-3">
+                <h4 class="text-xl text-wrap font-semibold text-purpleScale50">Debat Capres Putaran Pertama - Part 4.mp3</h4>
+                <div class="audio-header-button flex gap-3 justify-between items-center md:w-[305px] w-full">
+                    <button type="button" class="toggle-audio-control flex justify-center items-center gap-2 px-3 py-2 bg-purpleScale50 rounded-xl h-10 md:w-[130px] w-full" onclick="toggleAudioControl()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 24 24" fill="#ffffff" class="icon icon-tabler icons-tabler-filled icon-tabler-player-play">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" />
+                        </svg>
+                        <p class="text-purpleScale0">Putar Audio</p>
+                    </button>
+                    <div class="flex flex-col gap-2 md:w-[160px] w-full">
+                        <button type="button" class="audio-download-button flex justify-between items-center gap-1 px-3 py-2 bg-purpleScale50 rounded-xl text-white" onclick="downloadDropdownToggle()">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="18"  height="18"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
+                            <span>Download</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 6.293a1 1 0 011.414 0L10 9.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div id="download-dropdown" class="dropdown-content hidden absolute mt-12 bg-purpleScale50 p-3 rounded-lg">
+                            <p class="text-white">Teks dengan penanda waktu <span class="text-gray-900">.txt</span></p>
+                            <div class="border-b border-gray-200 opacity-20 my-1"></div>
+                            <p class="text-white">Teks tanpa penanda waktu <span class="text-gray-900">.txt</span></p>
+                            <div class="border-b border-gray-200 opacity-20 my-1"></div>
+                            <p class="text-white">File csv <span class="text-gray-900">.csv</span></p>
+                            <div class="border-b border-gray-200 opacity-20 my-1"></div>
+                            <p class="text-white">File Subtitle <span class="text-gray-900">.srt</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="transkrip-field" class="transkrip-field overflow-y-auto sm:p-8 py-3 h-TranscriptLong">
+                <div class="flex flex-col gap-3 overflow-auto">
+                    <div class="flex justify-between items-start gap-10">
+                        <p class="dark:text-purpleScale0">00:00:00</p>
+                        <div class="flex flex-col">
+                            <p class="dark:text-purpleScale0">Speaker 1</p>
+                            <p class="dark:text-purpleScale0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam accusamus voluptatibus odio culpa, quibusdam consequatur! Adipisci obcaecati repellat beatae.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start gap-10">
+                        <p class="dark:text-purpleScale0">00:00:00</p>
+                        <div class="flex flex-col">
+                            <p class="dark:text-purpleScale0">Speaker 1</p>
+                            <p class="dark:text-purpleScale0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam accusamus voluptatibus odio culpa, quibusdam consequatur! Adipisci obcaecati repellat beatae.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start gap-10">
+                        <p class="dark:text-purpleScale0">00:00:00</p>
+                        <div class="flex flex-col">
+                            <p class="dark:text-purpleScale0">Speaker 1</p>
+                            <p class="dark:text-purpleScale0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam accusamus voluptatibus odio culpa, quibusdam consequatur! Adipisci obcaecati repellat beatae.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start gap-10">
+                        <p class="dark:text-purpleScale0">00:00:00</p>
+                        <div class="flex flex-col">
+                            <p class="dark:text-purpleScale0">Speaker 1</p>
+                            <p class="dark:text-purpleScale0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam accusamus voluptatibus odio culpa, quibusdam consequatur! Adipisci obcaecati repellat beatae.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start gap-10">
+                        <p class="dark:text-purpleScale0">00:00:00</p>
+                        <div class="flex flex-col">
+                            <p class="dark:text-purpleScale0">Speaker 1</p>
+                            <p class="dark:text-purpleScale0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam accusamus voluptatibus odio culpa, quibusdam consequatur! Adipisci obcaecati repellat beatae.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start gap-10">
+                        <p class="dark:text-purpleScale0">00:00:00</p>
+                        <div class="flex flex-col">
+                            <p class="dark:text-purpleScale0">Speaker 1</p>
+                            <p class="dark:text-purpleScale0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam accusamus voluptatibus odio culpa, quibusdam consequatur! Adipisci obcaecati repellat beatae.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start gap-10">
+                        <p class="dark:text-purpleScale0">00:00:00</p>
+                        <div class="flex flex-col">
+                            <p class="dark:text-purpleScale0">Speaker 1</p>
+                            <p class="dark:text-purpleScale0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam accusamus voluptatibus odio culpa, quibusdam consequatur! Adipisci obcaecati repellat beatae.</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start gap-10">
+                        <p class="dark:text-purpleScale0">00:00:00</p>
+                        <div class="flex flex-col">
+                            <p class="dark:text-purpleScale0">Speaker 1</p>
+                            <p class="dark:text-purpleScale0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam accusamus voluptatibus odio culpa, quibusdam consequatur! Adipisci obcaecati repellat beatae.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="audio-control h-[64px] hidden justify-center items-center p-5 bg-purpleScale60 rounded-xl gap-3">
+                <img src="../../assets/play.svg" onclick="playAudio()" id="play-pause" class="size-6">
+                <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" onclick="playAudio()" id="play-pause"  viewBox="0 0 24 24"  fill="#ffffff"  class="icon icon-tabler icons-tabler-filled icon-tabler-player-play"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" /></svg> -->
+                <p id="audio-current-time" class="text-white">0:00</p>
+                <input type="range" name="time-seeker" id="audio-time-seeker" max="100" min="0" value="0" class="w-full">
+                <p id="audio-duration" class="w-[40px] text-white">-:--</p>
+                <div class="audio-volume justify-center items-center sm:flex hidden">
+                    <img src="../../assets/speaker.svg" onclick="muteAudio()" id="audio-mute-button" class="size-6 desktop:block mobile:hidden">
+                    <!-- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" onclick="muteAudio()" id="audio-mute-button"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-volume"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8a5 5 0 0 1 0 8" /><path d="M17.7 5a9 9 0 0 1 0 14" /><path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" /></svg> -->
+                    <div class="absolute mb-8">
+                        <input type="range" id="audio-volume-seeker" orient="vertical" max="100" min="0" value="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="desktop:px-20 mobile:px-5 py-10 bg-purpleScale80 w-full">
+        <div class="flex desktop:flex-row mobile:flex-col justify-between">
+            <div>
+                <img src="../../assets/Logo.png">
+                <p class="mt-4 font-poppins text-Base/Medium text-purpleScale0">Subsidiaries of Mulfubot, company registered in Indonesia.</p>
+            </div>
+            <div class="desktop:px-10 flex desktop:flex-row mobile:flex-col gap-4 py-4">
+                <div class="flex flex-col">
+                    <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">ADDRESS</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular max-w-[400px]">Jl. Akses UI No.94, Kel. Tugu, Kec. Cimanggis Kota Depok, Jawa Barat, 16451</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="font-poppins text-purpleScale0 text-Large/Reguler">Contact</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Email: mulfubot@gmail.com</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Phone: +62 1234 5678 90</p>
+                </div>
+            </div>
+            <div class="desktop:px-10 py-4">
+                <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">Follow Us</p>
+                <div class="grid grid-cols-3 gap-x-4">
+                    <img src="../../assets/tabler-icon-brand-instagram.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-x.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-facebook.svg" class="size-10">
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-solid border-purpleScale0 mt-3 mobile:hidden"></div>
+        <div class="my-4">
+            <div class="desktop:h-[84px] flex desktop:justify-between desktop:items-center desktop:flex-row mobile:flex-col">
+                <div class="flex mobile:mb-6 mobile:justify-between">
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0 desktop:mr-8">Terms of Service</p>
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0">Privacy Policy</p>
+                </div>
+                <p class="font-poppins text-Base/Regular text-purpleScale0">Copyright © 2024 MULFUBOT · All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../script/Transkrip.js"></script>
+    <script src="../script/index.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,17 @@
+.swiper{
+    width: 100%;
+    height: 370px;
+    display: block !important;
+}
+
+@media only screen and (min-width: 900px){
+    .swiper{
+        display: none !important;
+    }
+}
+
+.swiper-pagination-bullet{
+     background-color: #7E57A3 !important;
+}
+
+

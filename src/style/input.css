@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@media screen and (max-width: 800px) {
+    #uploaded-file::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+#uploaded-file::-webkit-scrollbar {
+    height: 12px;
+    width: 7px;
+  }
+#uploaded-file::-webkit-scrollbar-thumb{
+      border-radius: 3px;
+      background: #5f437b;
+  }
+  

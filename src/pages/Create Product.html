@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Blog Form</title>
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/menuAnimation.css">
+
+    <style>
+        .ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden; /* Pastikan overflow diatur agar border-radius tidak hilang */
+}
+
+/* Jika ada elemen internal yang perlu diperiksa */
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred:focus {
+    outline: none; /* Hilangkan outline fokus jika perlu */
+}
+
+        .ck-editor__editable_inline {
+
+            min-height: 200px;
+        }
+
+        #editorContentElement {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    #editorContentElement {
+        background-color: #24192E;
+        color: #ffffff;
+    }
+}
+        
+    </style>
+
+</head>
+<body class="flex flex-col items-center dark:bg-purpleScale90">
+    <div id="editorContentElement"></div>
+    <nav class="backdrop-blur-sm desktop:pt-10 mobile:pt-2 w-full fixed duration-300 bg-white dark:bg-purpleScale90 z-50 flex justify-center bg-opacity-80">
+        <div class="desktop:max-w-[1200px] mobile:w-full mobile:px-5">
+            <div class="flex justify-between items-center">
+                <a class="flex items-center text-textTitleColor" href="index.html">
+                    <img src="../assets/Logo.png">
+                </a>
+                <div class="mobile:hidden navbarMobile:flex items-center">
+                    <ul class="flex items-center text-purpleScale50 font-header font-semibold text-Large/SemiBold">
+                        <li class="pr-8"><a href="index.html">Home</a></li>
+                        <li class="pr-8"><a href="#HowItWorks">Cara Kerja</a></li>
+                        <li class="pr-8"><a href="pages/upload parafrase.html">Parafrase</a></li>
+                        <li><a href="#question">Pertanyaan</a></li>
+                    </ul>
+                </div>
+                <div class="flex gap-4">
+                    <img id="sun" class="cursor-pointer hidden dark:stroke-white" src="../../assets/sun.svg" alt="">
+                    <img id="moon" class="cursor-pointer hidden dark:stroke-white" src="../../assets/moon.svg" alt="">
+                    <div class="size-7 mobile:flex flex-col justify-around navbarMobile:hidden" onclick="openBar()">
+                        <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                        <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                        <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                    </div>
+                    <a href="pages/cek pesanan.html" class="px-7 rounded-[12px] text-purpleScale0 bg-purpleScale50 py-3 desktop:block mobile:hidden">Cari Pembelian</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="flex py-52 w-full justify-center items-center xl:px-[280px] lg:px-[100px] px-5">
+        <div class="flex flex-col border rounded-xl px-5 py-5 w-full gap-5 bg-purpleScale0 dark:bg-purpleScale80 border-borderColor dark:border-purpleScale60 shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+            <div id="Title-Field" class="gap-3 flex-col flex">
+                <h1 class="font-bold font-poppins text-4xl text-[#7E57A3]">Buat Product</h1>
+                <p class="font-poppins font-medium text-base dark:text-white opacity-80">Dengan mengisi form ini, Anda dapat mengidentifikasi fitur-fitur kunci yang akan meningkatkan nilai produk digital Anda, serta memaksimalkan dampaknya di pasar.</p>
+            </div>
+            <div id="Form-Field" class="flex flex-col gap-3">
+                <div class="flex flex-col gap-2">
+                    <p class="font-poppins font-bold text-lg dark:text-white">Judul</p>
+                    <input placeholder="Nama File" class="border dark:text-white p-4 rounded-xl border-[#5A3E74] dark:bg-purpleScale80">
+                </div>
+                <div class="flex flex-col w-full gap-2">
+                    <p class="font-poppins font-bold text-lg dark:text-white">Gambar</p>
+                    <label for="dropzone-file" class="flex flex-col dark:bg-purpleScale80 items-center justify-center w-full h-64 border-2 border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-[#342542]  hover:bg-gray-100 dark:border-[#5A3E74] dark:hover:border-[##5A3E74] ">
+                        <div id="file-dropzone" class="flex flex-col items-center justify-center pt-5 pb-6 gap-3">
+                            <img id="file-image" class="hidden w-24 h-24 object-cover rounded-md" alt="Preview"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#7E57A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-photo">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M15 8h.01" />
+                                <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" />
+                                <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" />
+                                <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" />
+                            </svg>
+                            <p id="file-label" class="mb-2 text-sm text-gray-500 dark:text-gray-400">Klik atau Seret File ke sini</p>
+                        </div>
+                        <input id="dropzone-file" type="file" class="hidden" accept="image/*"/>
+                    </label>
+                    <div id="Uploaded" class="flex gap-3 mt-3"></div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="font-poppins font-bold text-lg dark:text-white">Deskripsi Detail</p>
+                    <textarea id="editor"></textarea>     
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="font-poppins font-bold text-lg dark:text-white">Deskripsi Detail</p>
+                    <textarea class="rounded-xl border border-[#5A3E74] h-28 p-4 dark:bg-purpleScale80 dark:text-white"></textarea>     
+                </div>
+                <div class="flex gap-3 justify-between items-center w-full flex-wrap xl:flex-nowrap">
+                    <div class="flex flex-col gap-2 w-full">
+                        <p class="font-poppins font-bold text-lg dark:text-white">Judul</p>
+                        <input placeholder="Nama File" class="border dark:text-white p-4 rounded-xl bg border-[#5A3E74] dark:bg-purpleScale80">
+                    </div>
+                    <div class="flex flex-col gap-2 w-full">
+                        <p class="font-poppins font-bold text-lg dark:text-white">Judul</p>
+                        <input placeholder="Nama File" class="border dark:text-white p-4 rounded-xl border-[#5A3E74] dark:bg-purpleScale80">
+                    </div>
+                    <div class="flex flex-col gap-2 w-full">
+                        <p class="font-poppins font-bold text-lg dark:text-white">Judul</p>
+                        <input placeholder="Nama File" class="border dark:text-white p-4 rounded-xl border-[#5A3E74] dark:bg-purpleScale80">
+                    </div>
+                </div>
+            </div>
+            <button class="px-10 py-4 font-bold font-poppins bg-[#7E57A3] text-white rounded-xl">Buat Product</button>
+        </div>
+    </section>
+    <footer class="desktop:px-20 mobile:px-5 py-10 bg-purpleScale80 w-full">
+        <div class="flex desktop:flex-row mobile:flex-col justify-between">
+            <div>
+                <img src="../../assets/Logo.png">
+                <p class="mt-4 font-poppins text-Base/Medium text-purpleScale0">Subsidiaries of Mulfubot, company registered in Indonesia.</p>
+            </div>
+            <div class="desktop:px-10 flex desktop:flex-row mobile:flex-col gap-4 py-4">
+                <div class="flex flex-col">
+                    <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">ADDRESS</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular max-w-[400px]">Jl. Akses UI No.94, Kel. Tugu, Kec. Cimanggis Kota Depok, Jawa Barat, 16451</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="font-poppins text-purpleScale0 text-Large/Reguler">Contact</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Email: mulfubot@gmail.com</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Phone: +62 1234 5678 90</p>
+                </div>
+            </div>
+            <div class="desktop:px-10 py-4">
+                <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">Follow Us</p>
+                <div class="grid grid-cols-3 gap-x-4">
+                    <img src="../../assets/tabler-icon-brand-instagram.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-x.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-facebook.svg" class="size-10">
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-solid border-purpleScale0 mt-3 mobile:hidden"></div>
+        <div class="my-4">
+            <div class="desktop:h-[84px] flex desktop:justify-between desktop:items-center desktop:flex-row mobile:flex-col">
+                <div class="flex mobile:mb-6 mobile:justify-between">
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0 desktop:mr-8">Terms of Service</p>
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0">Privacy Policy</p>
+                </div>
+                <p class="font-poppins text-Base/Regular text-purpleScale0">Copyright © 2024 MULFUBOT · All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../script/index.js"></script>
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+        
+        var editorContentElement = document.querySelector(".ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred");
+        var stickyPanelContentElement = document.querySelector(".ck-sticky-panel__content");
+    var editorElement = document.querySelector(".ck-editor");
+    var contentElement = document.querySelector(".ck-content");
+    var toolbarElement = document.querySelector(".ck-toolbar");
+
+    if (editorContentElement) {
+    // Function to apply styles based on current mode
+    function applyStyles() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Dark mode
+            editorContentElement.style.borderBottomLeftRadius = "15px";
+            editorContentElement.style.borderBottomRightRadius = "15px";
+            editorContentElement.style.backgroundColor = "#24192E";
+            editorContentElement.style.color = "#ffffff";
+        } else {
+            // Light mode
+            editorContentElement.style.borderBottomLeftRadius = "15px";
+            editorContentElement.style.borderBottomRightRadius = "15px";
+            editorContentElement.style.backgroundColor = "#f0f0f0";
+            editorContentElement.style.color = "#000000";
+        }
+    }
+
+    // Initial application of styles
+    applyStyles();
+
+    // Add event listeners for focus and blur events
+    editorContentElement.addEventListener("focus", function() {
+        applyStyles();
+    });
+
+    editorContentElement.addEventListener("blur", function() {
+        applyStyles();
+    });
+
+    // Listen for changes in the color scheme preference
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyStyles);
+}
+
+
+    if (editorContentElement) {
+        // Set border radius pada sudut bawah
+        editorContentElement.style.borderBottomLeftRadius = "15px";
+        editorContentElement.style.borderBottomRightRadius = "15px";
+        editorContentElement.style.backgroundColor = "#24192E";
+
+
+        // Tambahkan event listener untuk menangani fokus dan hilangnya fokus
+        editorContentElement.addEventListener("focus", function() {
+            editorContentElement.style.borderBottomLeftRadius = "15px";
+            editorContentElement.style.borderBottomRightRadius = "15px";
+            editorContentElement.style.backgroundColor = "#24192E";
+            editorContentElement.style.color = "#ffffff";
+        });
+
+        editorContentElement.addEventListener("blur", function() {
+            editorContentElement.style.borderBottomLeftRadius = "15px";
+            editorContentElement.style.borderBottomRightRadius = "15px";
+            editorContentElement.style.backgroundColor = "#24192E";
+        });
+    }
+
+    if (stickyPanelContentElement) {
+        // Matikan border pada elemen dengan kelas 'ck-sticky-panel__content'
+        stickyPanelContentElement.style.border = "none";
+        
+    }
+
+    if (editorElement) {
+        // Border radius pada container utama
+        editorElement.style.borderRadius = "15px";
+    }
+
+    if (contentElement) {
+        contentElement.style.borderBottomLeftRadius = "15px";
+        contentElement.style.borderBottomRightRadius = "15px";
+    }
+
+    if (toolbarElement) {
+        // Border radius pada toolbar
+        toolbarElement.style.borderTopLeftRadius = "15px";
+        toolbarElement.style.borderTopRightRadius = "15px";
+
+        toolbarElement.style.border = "none";
+    }
+});
+
+    </script>
+    <script>
+        CkEDITOR.replace('#Editor', {
+            uiColor: '#24192E'
+        });
+    </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "ckeditor5": "https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.js",
+                "ckeditor5/": "https://cdn.ckeditor.com/ckeditor5/43.0.0/"
+            }
+        }
+    </script>
+    <script type="module">
+        import {
+            ClassicEditor,
+            Essentials,
+            Bold,
+            Italic,
+            Font,
+            Paragraph
+        } from 'ckeditor5';
+
+        ClassicEditor
+            .create( document.querySelector( '#editor' ), {
+                width: '100%',
+                plugins: [ Essentials, Bold, Italic, Font, Paragraph ],
+                toolbar: {
+                    items: [
+                        'undo', 'redo', '|', 'bold', 'italic', '|',
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                    ]
+                }
+            } )
+            .then( /* ... */ )
+            .catch( /* ... */ );
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const dropdown1 = document.getElementById("dropdown1");
+        const dropdownMenu1 = dropdown1.querySelector("#dropdownMenu");
+        const dropdownIcon1 = dropdown1.querySelector("#dropdownIcon");
+
+        dropdown1.addEventListener("click", function() {
+            dropdownMenu1.classList.toggle("hidden");
+            dropdownIcon1.classList.toggle("rotate-180");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!dropdown1.contains(event.target)) {
+                dropdownMenu1.classList.add("hidden");
+                dropdownIcon1.classList.remove("rotate-180");
+            }
+        });
+
+        const dropdown2 = document.getElementById("dropdown2");
+        const dropdownMenu2 = dropdown2.querySelector("#dropdownMenu");
+        const dropdownIcon2 = dropdown2.querySelector("#dropdownIcon");
+
+        dropdown2.addEventListener("click", function() {
+            dropdownMenu2.classList.toggle("hidden");
+            dropdownIcon2.classList.toggle("rotate-180");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!dropdown2.contains(event.target)) {
+                dropdownMenu2.classList.add("hidden");
+                dropdownIcon2.classList.remove("rotate-180");
+            }
+        });
+    });
+    </script>
+    <script>
+        document.getElementById('dropzone-file').addEventListener('change', function(event) {
+         const file = event.target.files[0];
+         if (file) {
+             const uploaded = document.getElementById('Uploaded');
+
+             const cardUpload = document.createElement('div');
+             cardUpload.classList.add('flex', 'flex-col', 'border', 'border-[#5A3E74]', 'p-2', 'rounded-xl', 'gap-3', 'max-w-[290px]');
+
+             cardUpload.innerHTML = `
+                 <div class="flex gap-3 justify-between">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#7E57A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-photo">
+                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                         <path d="M15 8h.01" />
+                         <path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" />
+                         <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" />
+                         <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" />
+                     </svg>
+                     <div class="flex flex-col gap-1">
+                         <div class="flex justify-between items-center gap-5">
+                             <p class="overflow-hidden truncate text-base font-semibold font-poppins text-purpleScale90 mt-1 dark:text-purpleScale1 max-w-[186px] min-w-[186px] dark:text-white">${file.name}</p>
+                             <button onclick="removeCard(this)">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AC5D5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                     <path d="M18 6l-12 12"/>
+                                     <path d="M6 6l12 12"/>
+                                 </svg>
+                             </button>
+                         </div>
+                         <p id="upload-size" class="text-black dark:text-white">${(0).toFixed(2)}kb / ${(file.size / 1024).toFixed(2)}kb</p>
+                     </div>
+                 </div>
+                 <div class="w-full bg-[#C4A4E2] h-[6px] rounded-full">
+                     <div id="upload-bar" class="bg-[#7E57A3] h-[6px] w-0 rounded-full"></div>
+                 </div>
+             `;
+
+             uploaded.appendChild(cardUpload);
+
+             simulateUpload(cardUpload, file.size);
+         }
+     });
+
+     function simulateUpload(cardUpload, totalSize) {
+         const uploadBar = cardUpload.querySelector('#upload-bar');
+         const uploadSize = cardUpload.querySelector('#upload-size');
+         const totalKb = totalSize / 1024;
+         let uploadedSize = 0;
+
+         const interval = setInterval(() => {
+
+             uploadedSize += totalKb / 20;
+             if (uploadedSize >= totalKb) {
+                 uploadedSize = totalKb;
+                 clearInterval(interval);
+             }
+
+             uploadSize.textContent = `${uploadedSize.toFixed(2)}kb / ${totalKb.toFixed(2)}kb`;
+             uploadBar.style.width = `${(uploadedSize / totalKb) * 100}%`;
+         }, 20);
+     }
+
+     function removeCard(button) {
+         const card = button.closest('div.flex.flex-col.border');
+         card.remove();
+     }
+
+     </script>
+     
+</body>
+</html>
+

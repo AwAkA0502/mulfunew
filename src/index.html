@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Cek Plagiarisme Cepat dan Murah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/scrolldownAnimation.css">
+    <link rel="stylesheet" href="style/menuAnimation.css">
+    <link rel="stylesheet" href="style/color.css">
+    <link rel="stylesheet" href="style/howitworks.css">
+    <link rel="stylesheet" href="style/Animation.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style/swiper.css">
+</head>
+<body class="dark:bg-purpleScale90 flex flex-col items-center overflow-x-hidden">
+    <nav class="backdrop-blur-sm desktop:pt-10 mobile:pt-2 w-full fixed duration-300 bg-white dark:bg-purpleScale90 z-50 flex justify-center bg-opacity-80">
+    <div class="desktop:max-w-[1200px] mobile:w-full mobile:px-5">
+        <div class="flex justify-between items-center">
+            <a class="flex items-center text-textTitleColor" href="index.html">
+                <img src="../assets/Logo.png">
+            </a>
+            <div class="mobile:hidden navbarMobile:flex items-center">
+                <ul class="flex items-center text-purpleScale50 font-header font-semibold text-Large/SemiBold">
+                    <li class="pr-8"><a href="index.html">Home</a></li>
+                    <li class="pr-8"><a href="#HowItWorks">Cara Kerja</a></li>
+                    <li class="pr-8"><a href="pages/upload parafrase.html">Parafrase</a></li>
+                    <li><a href="#question">Pertanyaan</a></li>
+                </ul>
+            </div>
+            <div class="flex gap-4">
+                <img id="sun" class="cursor-pointer hidden dark:stroke-white" src="../../assets/sun.svg" alt="">
+                <img id="moon" class="cursor-pointer hidden dark:stroke-white" src="../../assets/moon.svg" alt="">
+                <div class="size-7 mobile:flex flex-col justify-around navbarMobile:hidden" onclick="openBar()">
+                    <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                    <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                    <div class="h-[2px] bg-purpleScale50 rounded-[1px]"></div>
+                </div>
+                <a href="pages/cek pesanan.html" class="px-7 rounded-[12px] text-purpleScale0 bg-purpleScale50 py-3 desktop:block mobile:hidden">Cari Pembelian</a>
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <div id="menuBar" class="menuClosed w-screen h-screen mr-[100px] bg-purpleScale10 dark:bg-purpleScale80 fixed z-[60] opacity-0 px-2 flex flex-col justify-between">
+        <div>
+            <div class="py-2 flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="../assets/Logo.png">
+                </div>
+                <img src="../assets/tabler-icon-x.png" class="size-10" onclick="closeBar()">
+            </div>
+            <div class="mt-10">
+                <div class="grid grid-rows-5 gap-y-7">
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="index.html">Home</a></p>
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="#HowItWorks" onclick="closeBar()">Cara Kerja</a></p>
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="pages/upload parafrase.html">Parafrase</a></p>
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="pages/cek pesanan.html">Cek Pembelian</a></p>
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 font-bold text-center"><a href="#question" onclick="closeBar()">Pertanyaan</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 dark:border-purpleScale70 border-purpleScale50  border-t-2 mb-[15%]">
+            <a href="pages/upload.html">
+                <button class="bg-[#7E57A3] rounded-[20px] w-full py-3 text-white font-bold font-poppins">Coba Turnitin</button>
+            </a>
+        </div>
+    </div>
+    <section id="hero" class="justify-start items-center flex w-full max-w-[1440px] mobile:px-5 navbarMobile:px-120px desktop:pl-120px dekstop:pt-80px desktop:pr-0 desktop:mb-0 mobile:mt-MobileNavHeight mobile:pt-[80px] mobile:mb-10 desktop:mt-DesktopNavHeight desktop:py-[80px] desktop:flex-row mobile:flex-col">
+        <div id="header1" class="animation1 flex flex-col desktop:items-start mobile:items-center">
+            <h1 class="text-purpleScale50 desktop:text-header1/Desktop mobile:text-header1/Mobile font-bold font-poppins mb-4 mobile:text-center desktop:text-left">Cek Plagiasi No Repository dalam 15 menit, Di Mulfu!</h1>
+            <p class="text-purpleScale90 dark:text-purpleScale0 text-Large/Reguler font-poppins mb-4 mobile:text-center desktop:text-left">Menyediakan Layanan Unggul untuk Memastikan Keaslian dan Keorisinilan Konten Anda</p>
+            <div class="gap-6 mb-4 flex desktop:justify-start desktop:items-start mobile:justify-center mobile:items-center mobile:flex-col desktop:flex-row">
+                <div class="flex flex-col gap-3 mobile:text-center desktop:text-start flex-grow mobile:flex">
+                    <span class="text-purpleScale60 dark:text-purpleScale50 font-semibold text-xl font-poppins mobile:text-center">Pengguna Aktif</span>
+                    <h4 class="font-semibold text-2xl font-poppins text-purpleScale50 dark:text-purpleScale0">35.974 +</h4>
+                </div>
+                <div class="flex flex-col gap-3 mobile:text-center desktop:text-start flex-grow">
+                    <span class=" text-purpleScale60 dark:text-purpleScale50 font-semibold text-xl font-poppins">Pengecekan Dokumen</span>
+                    <h4 class="font-semibold text-2xl font-poppins text-purpleScale50 dark:text-purpleScale0">100.000 +</h4>
+                </div>
+            </div>
+            <a href="pages/upload.html">
+                <button class="px-10 py-4 bg-purpleScale50 text-purpleScale0 text-Base/Bold font-bold flex-grow-0 rounded-[20px]">Coba Sekarang</button>
+            </a>
+        </div>
+        <img src="../assets/Hero.png" alt="File Update" class="animation2 desktop:h-[548px] desktop:w-[576px] desktop:block navbarMobile:hidden mobile:hidden navbarMobile:w-full desktop:ml-20 desktop:mt-0 mobile:ml-0 mobile:mt-10">
+        <img src="../assets/File Upload 1.png" alt="File Update" class="animation2 desktop:h-[616px] desktop:w-[663px] desktop:hidden navbarMobile:block mobile:block navbarMobile:w-full desktop:ml-20 desktop:mt-0 mobile:ml-0 mobile:mt-10">
+    </section>
+        <img src="../assets/Ellipse 8.png" style="z-index:-100" class="absolute ml-[100vw] mt-[2450px] desktop:block mobile:hidden">
+        <img src="../assets/Ellipse 9.png" style="z-index:-100" class="absolute mr-[100vw] mt-[4220px] desktop:block mobile:hidden">
+        <img src="../assets/Ellipse 10.png" style="z-index:-100" class="absolute ml-[100vw] mt-[5220px] desktop:block mobile:hidden">
+        <img src="../assets/Ellipse 12.png" style="z-index:-100" class="absolute ml-[100vw] mt-[1100px] desktop:block gradien mobile:hidden">
+        <img src="../assets/Ellipse 12.png" style="z-index:-100" class="absolute mr-[100vw] mt-[2349px] desktop:block gradien mobile:hidden">
+        <img src="../assets/Ellipse 12.png" style="z-index:-100" class="absolute ml-[100vw] mt-[3000px] desktop:block gradien mobile:hidden">
+        <img src="../assets/Ellipse 12.png" style="z-index:-100" class="absolute mr-[100vw] mt-[4200px] desktop:block gradien mobile:hidden">
+    <!-- <img src="../assets/Ellipse 8.png" class="absolute ml-[1440px] mt-[2600px]">
+    <img src="../assets/Ellipse 8.png" class="absolute mr-[1440px] mt-[3900px]"> -->
+    <section id="HowItWorks" class="z-40 w-full max-w-[1112px] mobile:px-5 navbarMobile:mx-120px pt-60px flex flex-col justify-center items-center">
+        <center>
+            <div id="header2" class="animation2 text-center desktop:w-[720px] desktop:h-[126px]">
+                <h1 class="mb-4 text-purpleScale50 desktop:text-header1/Desktop mobile:text-header1/Mobile font-bold font-poppins">Bagaimana Mulfu Bekerja?</h1>
+                <p class="text-Large/Reguler font-poppins dark:text-purpleScale0">Dengan mengikuti langkah-langkah ini, Anda akan dapat mengunggah file dengan mudah ke Turnitin untuk diperiksa originalitasnya.</p>
+            </div>
+        </center>
+        <ul class="w-full items-center dekstop:h[100px] justify-center desktop:flex mobile:hidden desktop:flex-row mobile:flex-col desktop:grid-rows-1 navbarMobile:grid-cols-2 navbarMobile:grid-rows-2 mobile:grid-cols-1 mobile:grid-rows-4 gap-4 desktop:my-8 mobile:mt-8 mobile:mb-60px">
+            <li onclick="HowItWorks(1)" id="HIW1" class="animation4 selected w-full desktop:bg-purpleScale50 desktop:dark:bg-purpleScale50 mobile:bg-purpleScale0 mobile:dark:bg-purpleScale80 desktop:pointer-events-auto mobile:pointer-events-none border-purpleScale50 navbarMobile::border-purpleScale50 border-2 border-solid rounded-[20px] p-[16px] flex flex-col items-center mobile:shadow-[0_0_4px_4px_rgba(90,62,116,0.25)] desktop:shadow-[0_0_4px_4px_rgba(90,62,116,0)]">
+                <img src="../assets/file-upload.svg" alt="Upload" class="iconSelect mb-1 size-10 z-0 desktop:invert">
+                <p class="text-header4/Bold font-bold text-center mobile:text-purpleScale50 mobile:dark:text-purpleScale10 desktop:text-purpleScale0">Upload</p>
+            </li>
+            <li onclick="HowItWorks(2)" id="HIW2" class="animation4 w-full border-purpleScale50 navbarMobile::border-purpleScale50 desktop:pointer-events-auto mobile:pointer-events-none border-2 border-solid rounded-[20px] p-[16px] flex flex-col items-center mobile:shadow-[0_0_4px_4px_rgba(90,62,116,0.25)] desktop:shadow-[0_0_4px_4px_rgba(90,62,116,0)] desktop:hover:bg-purpleScale10 unselected desktop:dark:hover:bg-purpleScale70">
+                <img src="../assets/adjustments.svg" alt="Filter" class="iconSelect mb-1 size-10 iconColor">
+                <p class="text-header4/Bold font-bold text-purpleScale50 text-center">Filter</p>
+            </li>
+            <li onclick="HowItWorks(3)" id="HIW3" class="animation4 w-full border-purpleScale50 navbarMobile::border-purpleScale50 desktop:pointer-events-auto mobile:pointer-events-none border-2 border-solid rounded-[20px] p-[16px] flex flex-col items-center mobile:shadow-[0_0_4px_4px_rgba(90,62,116,0.25)] desktop:shadow-[0_0_4px_4px_rgba(90,62,116,0)] desktop:hover:bg-purpleScale10 unselected desktop:dark:hover:bg-purpleScale70">
+                <img src="../assets/credit-card-pay.svg" alt="Pembayaran" class="iconSelect mb-1 size-10 iconColor">
+                <p class="text-header4/Bold font-bold text-purpleScale50 text-center">Pembayaran</p>
+            </li>
+            <li onclick="HowItWorks(4)" id="HIW4" class="animation4 w-full border-purpleScale50 navbarMobile::border-purpleScale50 desktop:pointer-events-auto mobile:pointer-events-none border-2 border-solid rounded-[20px] p-[16px] flex flex-col items-center mobile:shadow-[0_0_4px_4px_rgba(90,62,116,0.25)] desktop:shadow-[0_0_4px_4px_rgba(90,62,116,0)] desktop:hover:bg-purpleScale10 unselected desktop:dark:hover:bg-purpleScale70">
+                <img src="../assets/download.svg" alt="Download" class="iconSelect mb-1 size-10 iconColor">
+                <p class="text-header4/Bold font-bold text-purpleScale50">Download</p>
+            </li>
+        </ul>
+        <div class="swiper mt-4">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="flex flex-col items-center border-2 border-purpleScale50 dark:bg-purpleScale80 border-solid rounded-[20px] p-[20px]  h-[320px]">
+                        <img src="../assets/file-upload.svg" alt="Download" class="iconSelect mb-1 size-10 iconMobile">
+                        <p class="text-header4/Bold font-bold text-purpleScale50 dark:text-purpleScale0 text-center mb-1">Upload</p>
+                        <div class="border-2 border-purpleScale50 border-solid h-full rounded-[20px] flex justify-center">
+                            <img src="../assets/File Upload.png" alt="Upload File" class="p-2 rounded-[20px]">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="flex flex-col items-center border-2 border-purpleScale50 dark:bg-purpleScale80 border-solid rounded-[20px] p-[20px]  h-[320px]">
+                        <img src="../assets/adjustments.svg" alt="Download" class="iconSelect mb-1 size-10 iconMobile">
+                        <p class="text-header4/Bold font-bold text-purpleScale50 dark:text-purpleScale0 text-center mb-1">Filter</p>
+                        <div class="border-2 border-purpleScale50 border-solid h-full rounded-[20px] flex justify-center">
+                            <img src="../assets/filter.png" alt="Upload File" class="p-2 rounded-[20px]">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="flex flex-col items-center border-2 border-purpleScale50 dark:bg-purpleScale80 border-solid rounded-[20px] p-[20px]  h-[320px]">
+                        <img src="../assets/credit-card-pay.svg" alt="Download" class="iconSelect mb-1 size-10 iconMobile">
+                        <p class="text-header4/Bold font-bold text-purpleScale50 dark:text-purpleScale0 text-center mb-1">Pembayaran</p>
+                        <div class="border-2 border-purpleScale50 border-solid h-full rounded-[20px] flex justify-center">
+                            <img src="../assets/pembayaran.png" alt="Upload File" class="p-2 rounded-[20px]">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="flex flex-col items-center border-2 border-purpleScale50 dark:bg-purpleScale80 border-solid rounded-[20px] p-[20px]  h-[320px]">
+                        <img src="../assets/download.svg" alt="Download" class="iconSelect mb-1 size-10 iconMobile">
+                        <p class="text-header4/Bold font-bold text-purpleScale50 dark:text-purpleScale0 text-center mb-1">Download</p>
+                        <div class="border-2 border-purpleScale50 border-solid h-full rounded-[20px] flex justify-center">
+                            <img src="../assets/download.png" alt="Upload File" class="p-2 rounded-[20px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <div class="w-full max-w-[1440px] desktop:flex mobile:hidden pb-60px flex flex-row justify-center gap-x-4 gap-0">
+        <div class="w-120px flex flex-col items-center justify-end">
+            <img src="../assets/dots.svg">
+            <img src="../assets/dots.svg">
+            <img src="../assets/dots.svg">
+        </div>
+        <div class="animation3 flex-grow max-w-[934px] max-h-[424px] dark:bg-purpleScale80 overflow-x-hidden border-2 border-purpleScale50 border-solid rounded-[20px] h-[504px] flex justify-center items-center shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+            <img id="HowItWorks1" src="../assets/File Upload.png" alt="Upload File" class="desktop:block mobile:hidden border-2 border-purpleScale50 border-solid rounded-[20px] h-[90%]">
+            <img id="HowItWorks2" src="../assets/filter.png" alt="Filter" class="hidden border-2 border-purpleScale50 border-solid rounded-[20px] h-[90%]">
+            <img id="HowItWorks3" src="../assets/pembayaran.png" alt="Pembayaran" class="hidden border-2 border-purpleScale50 border-solid rounded-[20px] h-[80%]">
+            <img id="HowItWorks4" src="../assets/download.png" alt="Download" class="hidden border-2 border-purpleScale50 border-solid rounded-[20px] h-[90%]">
+        </div>
+        <div class="w-120px flex flex-col items-center justify-start">
+            <img src="../assets/dots.svg">
+            <img src="../assets/dots.svg">
+            <img src="../assets/dots.svg">
+        </div>
+    </div>
+    <section id="features" class="w-full flex flex-col items-center max-w-[1440px] mobile:px-5 navbarMobile:px-120px py-60px">
+       
+        <center>
+            <div id="header" class="animation2 mobile:animation4 text-center desktop:w-[928px] desktop:h-[198px]">
+                <h1 class="mb-4 text-purpleScale50 desktop:text-header1/Desktop mobile:text-header1/Mobile font-bold font-poppins">Fitur Luar Biasa Untuk Membuat Pekerjaan Anda Lebih Mudah</h1>
+                <p class="text-Large/Reguler font-poppins text-purpleScale90 dark:text-purpleScale0">Kami telah meningkatkan fitur untuk mempermudah proses pengunggahan file, memberikan pengguna pengalaman yang lebih lancar dan efisien</p>
+            </div>
+        </center>
+        <div id="header2" class="animation3 not-show-2 mt-8 max-w-[1025px] border border-solid border-purpleScale60 dark:bg-purpleScale80 p-5 mobile:p-3 rounded-[20px] shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+            <div class="grid desktop:grid-cols-3 desktop:grid-rows-1 navbarMobile:grid-cols-2 navbarMobile:grid-rows-2 mobile:grid-rows-3 mobile:grid-cols-1 gap-x-2 gap-y-2 mb-4">
+                <div class="flex flex-col items-center justify-center flex-grow-0">
+                    <img src="../assets/api-app.svg" alt="Upload" class="size-12 iconColor">
+                    <h3 class="text-HeaderFitur text-purpleScale50 font-medium font-poppins text-center my-4">Pengenalan Fitur</h3>
+                    <p class="text-Base/Regular font-poppins text-center text-purpleScale90 dark:text-purpleScale0">Tingkatkan pengalaman pengguna Anda dengan aplikasi terbaru kami</p>
+                </div>
+                <div class="flex flex-col items-center justify-center flex-grow-0">
+                    <img src="../assets/components.svg" alt="Upload" class="size-12 iconColor">
+                    <h3 class="text-HeaderFitur text-purpleScale50 font-medium font-poppins text-center my-4">Desain Berkualitas</h3>
+                    <p class="text-Base/Regular font-poppins text-center text-purpleScale90 dark:text-purpleScale0">perpaduan estetika yang cermat, inovasi , dan perhatian detail yang teliti.</p>
+                </div>
+                <div class="flex flex-col items-center justify-center flex-grow-0 navbarMobile:col-span-2 desktop:col-span-1">
+                    <img src="../assets/layers-intersect.svg" alt="Upload" class="size-12 iconColor ">
+                    <h3 class="text-HeaderFitur text-purpleScale50 font-medium font-poppins text-center my-4">Semua Bagian Penting</h3>
+                    <p class="text-Base/Regular font-poppins text-center text-purpleScale90 dark:text-purpleScale0">informasi dan elemen-elemen kunci yang mendukung fungsi utama.</p>
+                </div>
+            </div>
+            <div class="grid gap-x-2 gap-y-2 desktop:grid-cols-3 desktop:grid-rows-1 navbarMobile:grid-cols-2 navbarMobile:grid-rows-2 mobile:grid-rows-3 mobile:grid-cols-1">
+                <div class="flex flex-col items-center justify-center">
+                    <img src="../assets/brand-speedtest.svg" alt="Upload" class="size-12 iconColor">
+                    <h3 class="text-HeaderFitur text-purpleScale50 font-medium font-poppins text-center my-4">Kecepatan optimalkan</h3>
+                    <p class="text-Base/Regular font-poppins text-center text-purpleScale90 dark:text-purpleScale0">Sistem ini dioptimalkan untuk kinerja yang cepat, memastikan pengalaman pengguna yang responsif dan efisien</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <img src="../assets/adjustments-horizontal.svg" alt="Upload" class="size-12 iconColor">
+                    <h3 class="text-HeaderFitur text-purpleScale50 font-medium font-poppins text-center my-4">Penyesuaian Fitur</h3>
+                    <p class="text-Base/Regular font-poppins text-center text-purpleScale90 dark:text-purpleScale0"> memberikan fleksibilitas dan kontrol penuh dalam pengaturan dan penggunaan.</p>
+                </div>
+                <div class="flex flex-col items-center justify-center navbarMobile:col-span-2 desktop:col-span-1">
+                    <img src="../assets/refresh.svg" alt="Upload" class="size-12 iconColor">
+                    <h3 class="text-HeaderFitur text-purpleScale50 font-medium font-poppins text-center my-4">Pembaruan Reguler</h3>
+                    <p class="text-Base/Regular font-poppins text-center text-purpleScale90 dark:text-purpleScale0">perbaikan bug, dan fitur-fitur baru yang akan meningkatkan pengalaman pengguna Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="WhatClientSay" class="flex flex-col items-center w-full max-w-[1440px] mobile:px-5 navbarMobile:px-120px py-60px">
+        <center>
+            <div id="header" class="animation2 text-center desktop:w-[668px] desktop:h-[136px]">
+                <h1 class="mb-4 text-purpleScale50 desktop:text-header1/Desktop mobile:text-header1/Mobile font-bold font-poppins">Apa Kata Klien</h1>
+                <p class="text-Large/Reguler font-poppins text-purpleScale90 dark:text-purpleScale0">Cerita Sukses dari Mereka yang Telah Menggunakan Mulfubot.</p>
+            </div>
+        </center>
+        <div class="mt-8 max-w-[1025px]">
+            <div id="row1-review" class="grid gap-8 desktop:grid-cols-2 desktop:grid-rows-1 mb-8">
+                <div id="card1" class="animation5 py-4 px-3 border border-solid bg-purpleScale0 dark:bg-purpleScale80 border-purpleScale60 rounded-[20px] shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+                    <div class="border-b border-[#24192E] border-solid mb-2 h-[110px] flex items-center">
+                        <p class="text-Base/Regular text-purpleScale90 dark:text-purpleScale0 font-poppins">Sungguh puas dengan pelayanan mereka! Tim profesional, cepat tanggap, dan hasilnya melebihi ekspektasi saya.</p>
+                    </div>
+                    <div class="py-2 flex mobile:flex-col desktop:flex-row desktop:items-center navbarMobile:flex-row navbarMobile:items-center mobile:items-start justify-between">
+                        <p class="text-Base/Medium text-purpleScale50 font-poppins font-semibold">Alexandra Calista</p>
+                        <p class="text-Small/Small text-purpleScale90 dark:text-purpleScale60 font-poppins">Universitas Indonesia</p>
+                    </div>
+                </div>
+                <div id="card2" class="animation5 py-4 px-3 border border-solid dark:bg-purpleScale80 border-purpleScale60 rounded-[20px] shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+                    <div class="border-b border-[#24192E] border-solid mb-2 h-[110px] flex items-center">
+                        <p class="text-Base/Regular text-purpleScale90 dark:text-purpleScale0 font-poppins">Saya sangat puas dengan pengalaman menggunakan Mulfubot.</p>
+                    </div>
+                    <div class="py-2 flex mobile:flex-col desktop:flex-row desktop:items-center navbarMobile:flex-row navbarMobile:items-center mobile:items-start justify-between">
+                        <p class="text-Base/Medium text-purpleScale50 font-poppins font-semibold">Abdu Rasyad Shalihuddin</p>
+                        <p class="text-Small/Small text-purpleScale90 dark:text-purpleScale60 font-poppins">Universitas Islam Jakarta</p>
+                    </div>
+                </div>
+            </div>
+            <div id="row2-review" class="grid gap-8 desktop:grid-cols-2 desktop:grid-rows-1">
+                <div id="card1" class="animation5 py-4 px-3 border border-solid dark:bg-purpleScale80 border-purpleScale60 rounded-[20px] shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+                    <div class="border-b border-[#24192E] border-solid mb-2 h-[110px] flex items-center">
+                        <p class="text-Base/Regular text-purpleScale90 dark:text-purpleScale0 font-poppins">Saya sangat terkesan dengan Mulfubot, benar-benar membantu saya mendapatkan informasi yang saya butuhkan dengan mudah</p>
+                    </div>
+                    <div class="py-2 flex mobile:flex-col desktop:flex-row desktop:items-center navbarMobile:flex-row navbarMobile:items-center mobile:items-start justify-between">
+                        <p class="text-Base/Medium text-purpleScale50 font-poppins font-semibold">Lintang Herninda Warsito</p>
+                        <p class="text-Small/Small text-purpleScale90 dark:text-purpleScale60 font-poppins">Universitas Singaperbangsa Karawang</p>
+                    </div>
+                </div>
+                <div id="card2" class="animation5 py-4 px-3 border border-solid dark:bg-purpleScale80 border-purpleScale60 rounded-[20px] shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+                    <div class="border-b border-[#24192E] border-solid mb-2 h-[110px] flex items-center">
+                        <p class="text-Base/Regular text-purpleScale90 dark:text-purpleScale0 font-poppins">Sistem otomatisasinya sangat membantu meningkatkan efisiensi pekerjaan sehari-hari. Terima kasih Mulfubot, telah memberikan solusi yang luar biasa!</p>
+                    </div>
+                    <div class="py-2 flex mobile:flex-col desktop:flex-row desktop:items-center navbarMobile:flex-row navbarMobile:items-center mobile:items-start justify-between">
+                        <p class="text-Base/Medium text-purpleScale50 font-poppins font-semibold">Naila</p>
+                        <p class="text-Small/Small text-purpleScale90 dark:text-purpleScale60 font-poppins">Universitas Pakuan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="parafrase" class="z-40 w-full max-w-[1440px] mobile:px-5 navbarMobile:px-120px py-60px">
+        <center>
+            <div id="header" class="animation2 text-center desktop:w-[989px] desktop:h-[136px]">
+                <h1 class="mb-4 text-purpleScale50 desktop:text-header1/Desktop mobile:text-header1/Mobile font-bold font-poppins">Maksimalkan Kreativitas Teks Anda!</h1>
+                <p class="text-Large/Reguler font-poppins text-purpleScale90 dark:text-purpleScale0">Mulfubot Menghadirkan Keahlian Parafrase Berkualitas Tinggi untuk Meningkatkan Kualitas Tulisan Anda.</p>
+            </div>
+        </center>
+        <div class="desktop:my-11 mobile:my-[51px] flex justify-center">
+            <div class="navbarMobile:flex items-center justify-center flex-col pt-6 mobile:hidden">
+                <img src="../assets/Icon-Parafrase1.svg" class="w-[150px] h-[160px] hidden dark:block">
+                <img src="../assets/Frame 36355.svg" class="w-[150px] h-[160px] block dark:hidden">
+                <div class="flex">
+                    <img src="../assets/dots.svg" class="size-[100px]">
+                    <img src="../assets/dots.svg" class="size-[100px] ml-[-15px]">
+                </div>
+            </div>
+            <div class="animation3">
+                <img src="../assets/Parafrase-dark.png" class="h-[400px] md:h-[600px] px-10 hidden dark:block">
+                <img src="../assets/Parafrase.png" class="h-[400px] md:h-[600px] px-10 block dark:hidden">
+            </div>
+            <div class="navbarMobile:flex items-center justify-center flex-col mobile:hidden">
+                <div class="flex">
+                    <img src="../assets/dots.svg" class="size-[100px]">
+                    <img src="../assets/dots.svg" class="size-[100px] ml-[-15px]">
+                </div>
+                <img src="../assets/Icon-Parafrase2.svg" class="w-[150px] h-[160px] hidden dark:block">
+                <img src="../assets/Frame 36354.svg" class="w-[150px] h-[160px] block dark:hidden">
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a href="pages/upload parafrase.html">
+                <button class="animation5 text-Base/Bold font-poppins text-purpleScale0 bg-purpleScale50 rounded-[20px] py-4 px-10 font-bold">Coba Sekarang</button>
+            </a>
+        </div>
+    </section>
+    <section id="question" class="z-40 py-60px w-full max-w-[1440px] mobile:px-5 navbarMobile:px-120px">
+        <center>
+            <div id="header" class="animation2 text-center desktop:w-[989px] desktop:h-[136px]">
+                <h1 class="mb-4 text-purpleScale50 desktop:text-header1/Desktop mobile:text-header1/Mobile font-bold font-poppins">Pertanyaan Yang Sering Diajukan</h1>
+                <p class="text-Large/Reguler font-poppins text-purpleScale90 dark:text-purpleScale0">Temukan jawaban atas pertanyaan yang sering diajukan mengenai fungsionalitas, dan manfaat Mulfubot di sini!</p>
+            </div>
+        </center>
+        <center>
+            <div id="content" class="animation3 my-8 max-w-[922px] px-4 py-3 dark:bg-purpleScale80 border-[#696565] dark:border-purpleScale60 border border-solid rounded-[20px] shadow-[0_0_4px_4px_rgba(90,62,116,0.25)]">
+                <div id="QnA1" class="p-6 flex justify-between items-center rounded-t-[20px] hover:bg-purpleScale10 dark:hover:bg-purpleScale70" onclick="extendContent('QnA1')">
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 text-left w-full">Apa keunggulan Mulfubot?</p>
+                    <div class="size-[20px]">
+                        <div id="plusQnA" class="flex items-center size-[20px]">
+                            <div id="horizontal" class="bg-purpleScale90 dark:bg-purpleScale0"></div>
+                            <div id="vertical" class="bg-purpleScale90 dark:bg-purpleScale0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="QnA1A" class="px-6 py-4 hidden AnswerClose">
+                    <p class="text-Base/Reguler font-poppins text-purpleScale90 dark:text-purpleScale10 text-left">Mulfubot memiliki keunggulan yang luar biasa dalam memberikan solusi otomatis untuk tugas-tugas berulang, meningkatkan efisiensi, dan mengoptimalkan produktivitas. Dengan kemampuan pemrosesan bahasa alaminya yang canggih, Mulfubot mampu memahami konteks secara mendalam, memberikan respon yang relevan, dan dapat disesuaikan untuk memenuhi kebutuhan spesifik pengguna.</p>
+                </div>
+                <div class="border-b border-purpleScale90 border-solid"></div>
+                <div id="QnA2" class="p-6 flex justify-between items-center hover:bg-purpleScale10 dark:hover:bg-purpleScale70" onclick="extendContent('QnA2')">
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 text-left">Apakah Mulfubot bisa diintegrasikan dengan platform lain?</p>
+                    <div class="size-[20px]">
+                        <div id="plusQnA" class="flex items-center size-[20px]">
+                            <div id="horizontal" class="bg-purpleScale90 dark:bg-purpleScale0"></div>
+                            <div id="vertical" class="bg-purpleScale90 dark:bg-purpleScale0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="QnA2A" class="px-6 py-4 hidden AnswerClose">
+                    <p class="text-Base/Reguler font-poppins text-purpleScale90 dark:text-purpleScale10 text-left">Ya, Mulfubot dapat diintegrasikan dengan berbagai platform lain. Kemampuan integrasi Mulfubot dengan platform lainnya memungkinkan pengembang untuk menyematkan atau menghubungkan fungsionalitas Mulfubot ke dalam situs web yang di kembangkan. Dengan cara ini, Mulfubot dapat digunakan untuk memberikan layanan cerdas dan berinteraksi dengan pengguna dalam konteks yang lebih luas.</p>
+                </div>
+                <div class="border-b border-purpleScale90 border-solid"></div>
+                <div id="QnA3" class="p-6 flex justify-between items-center rounded-b-[20px] hover:bg-purpleScale10 dark:hover:bg-purpleScale70" onclick="extendContent('QnA3')">
+                    <p class="text-Large/SemiBold font-poppins text-purpleScale50 text-left">Apakah Mulfubot memiliki dukungan multibahasa?</p>
+                    <div class="size-[20px]">
+                        <div id="plusQnA" class="flex items-center size-[20px]">
+                            <div id="horizontal" class="bg-purpleScale90 dark:bg-purpleScale0"></div>
+                            <div id="vertical" class="bg-purpleScale90 dark:bg-purpleScale0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="QnA3A" class="px-6 py-4 hidden AnswerClose">
+                    <p class="text-Base/Reguler font-poppins text-purpleScale90 dark:text-purpleScale10 text-left">Ya, Mulfubot memiliki kemampuan dukungan multibahasa. Ini berarti Mulfubot dapat memproses dan memahami teks dalam berbagai bahasa, memungkinkannya berinteraksi dengan pengguna dari berbagai latar belakang linguistik. Kemampuan multibahasa ini dapat mencakup pemahaman konteks dan memberikan respon dalam bahasa yang sesuai dengan permintaan atau pertanyaan pengguna, meningkatkan keterlibatan lintas budaya dan bahasa.</p>
+                </div>
+            </div>
+        </center>
+        <div>
+            <p class="animation5 text-center font-poppins text-Large/Reguler text-purpleScale90 dark:text-purpleScale10">masih belum menemukan jawaban yang kamu cari? Hubungi kami <span class="text-Large/Reguler font-poppins text-purpleScale50">support server</span></p>
+        </div>
+    </section>
+    <section id="blog" class="flex items-center flex-col z-40 py-60px w-full max-w-[1440px] mobile:px-5 navbarMobile:px-120px ">
+        <center>
+            <div id="header" class="animation2 text-center desktop:w-[989px] desktop:h-[136px]">
+                <h1 class="mb-4 text-purpleScale50 desktop:text-header1/Desktop mobile:text-header1/Mobile font-bold font-poppins">Berita & Blog Terbaru</h1>
+                <p class="text-Large/Reguler font-poppins text-purpleScale90 dark:text-purpleScale0">Cerita Sukses dari Mereka yang Telah Menggunakan Mulfubot.</p>
+            </div>
+        </center>
+        <div id="row-blog" class="mobile:max-w-[600px] desktop:max-w-none mobile:mt-8 desktop:mt-0 grid desktop:grid-cols-3 desktop:grid-rows-1 mobile:grid-cols-1 mobile:grid-rows-3 gap-12">
+            <div class="animation4">
+                <div class="flex justify-center">
+                    <img src="../assets/Image.png">
+                </div>
+                <a href="https://google.com">
+                    <h4 class="my-4 text-Large/SemiBold font-poppins text-purpleScale50 hover:text-BlogTitleHover font-bold mobile:text-center desktop:text-left">
+                        9 Cara Sederhana untuk meningkatkan  desain Anda
+                    </h4>
+                </a>
+                <p class="text-Base/Regular text-purpleScale90 dark:text-purpleScale0 font-poppins mobile:text-center desktop:text-left">
+                    Meningkatkan keterampilan desain Anda adalah proses berkelanjutan yang melibatkan latihan.
+                </p>
+            </div>
+            <div class="animation4">
+                <div class="flex justify-center">
+                    <img src="../assets/Image.png" class="items-self-center">
+                </div>
+                <a href="https://google.com">
+                    <h4 class="my-4 text-Large/SemiBold font-poppins text-purpleScale50 hover:text-BlogTitleHover font-bold mobile:text-center desktop:text-left">
+                        9 Cara Sederhana untuk meningkatkan  desain Anda
+                    </h4>
+                </a>
+                <p class="text-Base/Regular text-purpleScale90 dark:text-purpleScale0 font-poppins mobile:text-center desktop:text-left">
+                    Meningkatkan keterampilan desain Anda adalah proses berkelanjutan yang melibatkan latihan.
+                </p>
+            </div>
+            <div class="animation4">
+                <div class="flex justify-center">
+                    <img src="../assets/Image.png" class="items-self-center">
+                </div>
+                <a href="https://google.com">
+                    <h4 class="my-4 text-Large/SemiBold font-poppins text-purpleScale50 hover:text-BlogTitleHover font-bold mobile:text-center desktop:text-left">
+                        9 Cara Sederhana untuk meningkatkan  desain Anda
+                    </h4>
+                </a>
+                <p class="text-Base/Regular text-purpleScale90 dark:text-purpleScale0 font-poppins mobile:text-center desktop:text-left">
+                    Meningkatkan keterampilan desain Anda adalah proses berkelanjutan yang melibatkan latihan.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="cta" class="animation2 py-60px flex justify-center w-full max-w-[1440px] mobile:px-5 navbarMobile:px-120px ">
+        <div class="py-4 px-5 grid desktop:grid-cols-2 dark:bg-purpleScale80 dark:border-purpleScale60 desktop:grid-rows-1 gap-8 w-auto border border-solid border-[#696565] rounded-[20px]">
+            <div class="desktop:py-20 desktop:w-[428px] mobile:flex flex-col mobile:items-center desktop:items-start">
+                <h4 class="text-purpleScale50 font-poppins desktop:text-header3/Desktop mobile:text-header3/Mobile mobile:text-center desktop:text-left font-bold">Pakai Mulfu Sekarang</h4>
+                <p class="font-poppins text-Base/Regular text-purpleScale90 dark:text-purpleScale0 mt-3 mobile:text-center desktop:text-left">Silakan kunjungi situs resmi kami  dan nikmati beragam fitur inovatif yang akan memperkaya pengalaman pengguna Anda</p>
+                <a href="#hero" class="z-40">
+                    <button class="flex-grow-0 text-Base/Bold font-poppins text-purpleScale0 bg-purpleScale50 rounded-[20px] py-4 px-10 font-bold mt-4">Coba Sekarang</button>
+                </a>
+            </div>
+            <img src="../assets/image2.png" class="justify-self-center">
+        </div>
+    </section>
+    <footer class="desktop:px-20 mobile:px-5 py-10 bg-purpleScale80 w-full">
+        <div class="flex desktop:flex-row mobile:flex-col justify-between">
+            <div>
+                <img src="../../assets/Logo.png">
+                <p class="mt-4 font-poppins text-Base/Medium text-purpleScale0">Subsidiaries of Mulfubot, company registered in Indonesia.</p>
+            </div>
+            <div class="desktop:px-10 flex desktop:flex-row mobile:flex-col gap-4 py-4">
+                <div class="flex flex-col">
+                    <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">ADDRESS</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular max-w-[400px]">Jl. Akses UI No.94, Kel. Tugu, Kec. Cimanggis Kota Depok, Jawa Barat, 16451</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="font-poppins text-purpleScale0 text-Large/Reguler">Contact</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Email: mulfubot@gmail.com</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Phone: +62 1234 5678 90</p>
+                </div>
+            </div>
+            <div class="desktop:px-10 py-4">
+                <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">Follow Us</p>
+                <div class="grid grid-cols-3 gap-x-4">
+                    <img src="../../assets/tabler-icon-brand-instagram.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-x.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-facebook.svg" class="size-10">
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-solid border-purpleScale0 mt-3 mobile:hidden"></div>
+        <div class="my-4">
+            <div class="desktop:h-[84px] flex desktop:justify-between desktop:items-center desktop:flex-row mobile:flex-col">
+                <div class="flex mobile:mb-6 mobile:justify-between">
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0 desktop:mr-8">Terms of Service</p>
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0">Privacy Policy</p>
+                </div>
+                <p class="font-poppins text-Base/Regular text-purpleScale0">Copyright © 2024 MULFUBOT · All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script/index.js"></script>
+    <script src="script/Animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script/swiperControl.js"></script>
+</body>
+</html>

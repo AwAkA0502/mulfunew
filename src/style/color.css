@@ -1,0 +1,23 @@
+.iconColor{ 
+    filter: invert(33%) sepia(73%) saturate(372%) hue-rotate(228deg) brightness(101%) contrast(93%);
+}
+
+.iconColor2{ 
+    filter: invert(33%) sepia(73%) saturate(372%) hue-rotate(228deg) brightness(101%) contrast(93%);
+}
+
+.starColor{
+    filter: invert(49%) sepia(57%) saturate(658%) hue-rotate(224deg) brightness(90%) contrast(89%);
+}
+
+.iconMobile{
+    @media only screen and (max-width: 900px) {
+        filter: invert(33%) sepia(73%) saturate(372%) hue-rotate(228deg) brightness(101%) contrast(93%);
+    }
+}
+
+.iconMobileDark{
+    @media only screen and (max-width: 900px) {
+        filter: invert(100%);
+    }
+}

@@ -1,0 +1,153 @@
+.container {
+  width: 100%;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
+
+.hidden {
+    display: none;
+}
+.field-hidden {
+    display: none;
+}
+.field-visible {
+    display: flex;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background: rgb(203 213 225 / var(--tw-bg-opacity));
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: rgb(110, 19, 153);
+  }
+
+  .flex-wrapper {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .single-chart-main {
+    width: 90%;
+    justify-content: space-around ;
+  }
+
+  .single-chart-main {
+    width: 43%;
+    justify-content: space-around ;
+  }
+
+  .single-chart {
+    width: 80px;
+    justify-content: space-around ;
+  }
+  
+  .circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+  }
+  
+  .circle-bg {
+    fill: none;
+    stroke: rgb(214, 213, 213);
+    stroke-width: 3.8;
+  }
+  
+  .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+  }
+  
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
+  .circular-chart.purple .circle {
+    stroke: #83188d;
+  }
+
+  .circular-chart.red .circle {
+    stroke: #be1841;
+  }
+
+  .circular-chart.blue .circle {
+    stroke: #1f14bb;
+  }
+  
+  
+  
+  .percentage {
+    fill: rgb(255, 255, 255);
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+  }
+
+  .percentage-red {
+    fill: rgb(202, 44, 44);
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+    font-weight: bold;
+  }
+
+  .percentage-blue {
+    fill: rgb(72, 46, 218);
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+    font-weight: bold;
+  }
+
+  .menuClosed {
+    right: -100%; /* Hide the menu off-screen to the right */
+    opacity: 0;
+    transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.menuOpen {
+    right: 0; /* Bring the menu on-screen */
+    opacity: 1;
+}
+
+.overlayHidden {
+    display: none;
+    opacity: 0;
+}
+
+.overlayVisible {
+    display: block;
+    opacity: 0.5;
+}
+
+#content.blur {
+    filter: blur(5px);
+}
+
+
+
+
+

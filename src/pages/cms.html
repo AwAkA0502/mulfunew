@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Cek Pesanan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/menuAnimation.css">
+</head>
+<body class="flex flex-col items-center dark:bg-purpleScale90">
+    <nav id="Dekstop" class="xl:flex justify-between items-center w-full px-20 py-8 hidden">
+        <h1 class="font-poppins font-bold text-[40px] text-[#7E57A3]">MULFU</h1>
+        <div class="border border-[#24192E] rounded-xl py-[15px] px-[22px] flex gap-[14px] justify-start items-center w-[670px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                <path d="M21 21l-6 -6" />
+            </svg>
+            <input placeholder="Search..." class="focus:outline-none">
+        </div>
+        <button id="dropdown1" class="relative flex justify-between items-center gap-[10px] cursor-pointer">
+            <div class="w-[30px] h-[30px] bg-[#D9D9D9] rounded-full"></div>
+            <p>Kgs. Wahyu ganteng</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down transition-transform duration-200" id="dropdownIcon">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M6 9l6 6l6 -6"/>
+            </svg>
+            <div id="dropdownMenu" class="hidden absolute mt-[100px] w-fit px-8 border border-gray-200 bg-red-500 rounded-lg shadow-lg z-10">
+                <ul class="list-none p-2 m-0">
+                    <li><a href="#" class="block px-4 py-2 font-bold text-white">Logout</a></li>
+                </ul>
+            </div>
+        </button>
+    </nav>
+    <nav id="Mobile" class="xl:hidden justify-between items-center w-full px-5 py-8 flex-col">
+        <div class="flex justify-between items-center">
+            <h1 class="font-poppins font-bold text-[40px] text-[#7E57A3]">MULFU</h1>
+            <button id="dropdown2" class="relative flex justify-between items-center gap-[4px] cursor-pointer">
+                <div class="w-[30px] h-[30px] bg-[#D9D9D9] rounded-full"></div>
+                <p>Kgs. Wahyu ganteng</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down transition-transform duration-200" id="dropdownIcon">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6 9l6 6l6 -6"/>
+                </svg>
+                <div id="dropdownMenu" class="hidden absolute mt-[100px] w-fit px-8 border border-gray-200 bg-red-500 rounded-lg shadow-lg z-10">
+                    <ul class="list-none p-2 m-0">
+                        <li><a href="#" class="block px-4 py-2 font-bold text-white">Logout</a></li>
+                    </ul>
+                </div>
+            </button>
+        </div>
+        <div class="border border-[#24192E] rounded-xl py-[15px] px-[22px] flex gap-[14px] justify-start items-center w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                <path d="M21 21l-6 -6" />
+            </svg>
+            <input placeholder="Search..." class="focus:outline-none">
+        </div>
+    </nav>
+    <div class="py-4 border-y w-full lg:px-20 px-5 border-[#8E8E8E]">
+        <button type="button" class="px-[32px] py-[16px] bg-[#7E57A3] rounded-xl text-white font-bold">Blog</button>
+    </div>
+    <div class="flex flex-col py-4 w-full lg:px-[120px] px-[12px] pb-[120px] gap-5">
+        <div class="flex w-full lg:justify-end lg:items-end justify-center items-center gap-3 ">
+            <button type="button" class="flex gap-2 px-[16px] py-[12px] bg-[#AC5D5D] rounded-xl text-white font-bold">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" />
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+                <p>Hapus Blog</p>
+            </button>
+            <button type="button" class="flex gap-2 px-[16px] py-[12px] bg-[#D98F00] rounded-xl text-white font-bold">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-pencil">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
+                <p>Edit Blog</p>
+            </button>
+        </div>
+        <div class="flex flex-col justify-center items-center lg:px-[120px] px-[20px] gap-[35px]">
+            <h1 class="font-bold text-[40px] text-[#7E57A3] text-center">9 Cara Sederhana untuk meningkatkan  desain Anda</h1>
+            <div class="flex justify-center items-center w-full h-[394px] bg-[#8E8E8E] rounded-xl">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="90"  height="90"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-photo"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 8h.01" /><path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z" />
+                    <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5" /><path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3" /></svg>
+            </div>
+            <p>What is Lorem Ipsum?<br><br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
+    <footer class="desktop:px-20 mobile:px-5 py-10 bg-purpleScale80 w-full">
+        <div class="flex desktop:flex-row mobile:flex-col justify-between">
+            <div>
+                <img src="../../assets/Logo.png">
+                <p class="mt-4 font-poppins text-Base/Medium text-purpleScale0">Subsidiaries of Mulfubot, company registered in Indonesia.</p>
+            </div>
+            <div class="desktop:px-10 flex desktop:flex-row mobile:flex-col gap-4 py-4">
+                <div class="flex flex-col">
+                    <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">ADDRESS</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular max-w-[400px]">Jl. Akses UI No.94, Kel. Tugu, Kec. Cimanggis Kota Depok, Jawa Barat, 16451</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="font-poppins text-purpleScale0 text-Large/Reguler">Contact</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Email: mulfubot@gmail.com</p>
+                    <p class="font-poppins text-purpleScale0 text-Base/Regular">Phone: +62 1234 5678 90</p>
+                </div>
+            </div>
+            <div class="desktop:px-10 py-4">
+                <p class="mb-3 font-poppins text-purpleScale0 text-Large/Reguler">Follow Us</p>
+                <div class="grid grid-cols-3 gap-x-4">
+                    <img src="../../assets/tabler-icon-brand-instagram.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-x.svg" class="size-10">
+                    <img src="../../assets/tabler-icon-brand-facebook.svg" class="size-10">
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-solid border-purpleScale0 mt-3 mobile:hidden"></div>
+        <div class="my-4">
+            <div class="desktop:h-[84px] flex desktop:justify-between desktop:items-center desktop:flex-row mobile:flex-col">
+                <div class="flex mobile:mb-6 mobile:justify-between">
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0 desktop:mr-8">Terms of Service</p>
+                    <p class="font-poppins text-Large/Reguler text-purpleScale0">Privacy Policy</p>
+                </div>
+                <p class="font-poppins text-Base/Regular text-purpleScale0">Copyright © 2024 MULFUBOT · All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../script/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const dropdown1 = document.getElementById("dropdown1");
+        const dropdownMenu1 = dropdown1.querySelector("#dropdownMenu");
+        const dropdownIcon1 = dropdown1.querySelector("#dropdownIcon");
+
+        dropdown1.addEventListener("click", function() {
+            dropdownMenu1.classList.toggle("hidden");
+            dropdownIcon1.classList.toggle("rotate-180");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!dropdown1.contains(event.target)) {
+                dropdownMenu1.classList.add("hidden");
+                dropdownIcon1.classList.remove("rotate-180");
+            }
+        });
+
+        const dropdown2 = document.getElementById("dropdown2");
+        const dropdownMenu2 = dropdown2.querySelector("#dropdownMenu");
+        const dropdownIcon2 = dropdown2.querySelector("#dropdownIcon");
+
+        dropdown2.addEventListener("click", function() {
+            dropdownMenu2.classList.toggle("hidden");
+            dropdownIcon2.classList.toggle("rotate-180");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!dropdown2.contains(event.target)) {
+                dropdownMenu2.classList.add("hidden");
+                dropdownIcon2.classList.remove("rotate-180");
+            }
+        });
+    });
+    </script>
+</body>
+</html>
