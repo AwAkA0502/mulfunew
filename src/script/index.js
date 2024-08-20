@@ -107,6 +107,8 @@ function HowItWorks(step) {
 function SetElementsDark(isDark) {
     let gradients = document.getElementsByClassName("gradien");
     let icon2 = document.getElementsByClassName("icon2");
+    let ckToolbar = document.getElementsByClassName("ck-toolbar"); // Ambil elemen ck-toolbar
+
     if (isDark) {
         let classes = document.getElementsByClassName("unselected");
         let icon = document.getElementsByClassName("iconMobile");
@@ -123,6 +125,9 @@ function SetElementsDark(isDark) {
         }
         for (let i = 0; i < icon2.length; i++) {
             icon2[i].classList.add("iconColor2");
+        }
+        for (let i = 0; i < ckToolbar.length; i++) {
+            ckToolbar[i].classList.add("dark:bg-purpleScale80"); // Tambahkan class dark:bg-purpleScale80
         }
     }
     else if(!isDark) {
@@ -141,6 +146,9 @@ function SetElementsDark(isDark) {
         }
         for (let i = 0; i < icon2.length; i++) {
             icon2[i].classList.remove("iconColor2");
+        }
+        for (let i = 0; i < ckToolbar.length; i++) {
+            ckToolbar[i].classList.remove("dark:bg-purpleScale80"); // Hapus class dark:bg-purpleScale80
         }
         icon[0].classList.add("iconMobile");
         icon[0].classList.remove("iconMobileDark");
@@ -194,6 +202,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     themeCheck();
 });
+
+
 
 const closeBtn = document.getElementById('closeBtn');
     const container = document.getElementById('container');
