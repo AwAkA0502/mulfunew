@@ -107,7 +107,9 @@ function HowItWorks(step) {
 function SetElementsDark(isDark) {
     let gradients = document.getElementsByClassName("gradien");
     let icon2 = document.getElementsByClassName("icon2");
-    let ckToolbar = document.getElementsByClassName("ck-toolbar"); // Ambil elemen ck-toolbar
+    let ckToolbar = document.getElementsByClassName("ck-toolbar");
+    let ckBlurred = document.getElementsByClassName("ck-editor__editable_inline");
+    let ckFocused = document.getElementsByClassName("ck-focused");
 
     if (isDark) {
         let classes = document.getElementsByClassName("unselected");
@@ -127,10 +129,15 @@ function SetElementsDark(isDark) {
             icon2[i].classList.add("iconColor2");
         }
         for (let i = 0; i < ckToolbar.length; i++) {
-            ckToolbar[i].classList.add("dark:bg-purpleScale80"); // Tambahkan class dark:bg-purpleScale80
+            ckToolbar[i].classList.add("dark:bg-purpleScale50");
         }
-    }
-    else if(!isDark) {
+        for (let i = 0; i < ckBlurred.length; i++) {
+            ckBlurred[i].classList.add("dark:bg-purpleScale80");
+        }
+        for (let i = 0; i < ckFocused.length; i++) {
+            ckFocused[i].classList.add("dark:bg-purpleScale80");
+        }
+    } else if (!isDark) {
         let classesDark = document.getElementsByClassName("unselected-dark");
         let icon = document.getElementsByClassName("iconMobileDark");
         for (let i = classesDark.length-1; i >= 0; i--) {
@@ -148,7 +155,13 @@ function SetElementsDark(isDark) {
             icon2[i].classList.remove("iconColor2");
         }
         for (let i = 0; i < ckToolbar.length; i++) {
-            ckToolbar[i].classList.remove("dark:bg-purpleScale80"); // Hapus class dark:bg-purpleScale80
+            ckToolbar[i].classList.remove("dark:bg-purpleScale50");
+        }
+        for (let i = 0; i < ckBlurred.length; i++) {
+            ckBlurred[i].classList.remove("dark:bg-purpleScale80");
+        }
+        for (let i = 0; i < ckFocused.length; i++) {
+            ckFocused[i].classList.remove("dark:bg-purpleScale80");
         }
         icon[0].classList.add("iconMobile");
         icon[0].classList.remove("iconMobileDark");
@@ -181,13 +194,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const themeSwitch = () => {
         if (document.documentElement.classList.contains("dark")) {
             document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme","light");
+            localStorage.setItem("theme", "light");
             iconToggle();
             SetElementsDark(false);
             return;
         }
         document.documentElement.classList.add("dark");
-        localStorage.setItem("theme","dark");
+        localStorage.setItem("theme", "dark");
         iconToggle();
         SetElementsDark(true);
     };
@@ -203,15 +216,12 @@ document.addEventListener("DOMContentLoaded", function() {
     themeCheck();
 });
 
-
-
+// Event listener untuk tombol close
 const closeBtn = document.getElementById('closeBtn');
-    const container = document.getElementById('container');
-    
-    // Tambahkan event listener untuk SVG x
-    closeBtn.addEventListener('click', function() {
-        // Hapus kontainer
-        container.remove();
-    });
+const container = document.getElementById('container');
+
+closeBtn.addEventListener('click', function() {
+    container.remove();
+});
 
 

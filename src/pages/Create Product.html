@@ -36,19 +36,46 @@
     color: #000000;
 }
 
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-    #editorContentElement {
-        background-color: #24192E;
-        color: #ffffff;
-    }
+ /* Warna default */
+ .ck-toolbar {
+    background-color: #7E57A3 !important;
+ }
+
+ .dark .ck-toolbar {
+    background-color: #7E57A3 !important;
+ }
+
+.ck-focused {
+    color: black !important;
+    background-color: white !important;
 }
-        
+
+.ck-blurred {
+    border-color: #5c5c5c !important;
+    color: black !important;
+    background-color: white !important;
+}
+
+/* Warna untuk dark mode */
+.dark .ck-focused {
+    
+    color: white !important;
+    background-color: #24192E !important; /* Sesuaikan warna latar belakang */
+}
+
+.dark .ck-blurred {
+    border-color: #7E57A3 !important;
+    color: white !important;
+    background-color: #24192E !important; /* Sesuaikan warna latar belakang */
+}
+
+
+
     </style>
 
 </head>
-<body class="flex flex-col items-center dark:bg-purpleScale90">
-    <div id="editorContentElement"></div>
+<body class="flex flex-col items-center dark:bg-purpleScale90 ">
+    <div id="editorContentElement" class="dark:bg-purpleScale80"></div>
     <nav class="backdrop-blur-sm desktop:pt-10 mobile:pt-2 w-full fixed duration-300 bg-white dark:bg-purpleScale90 z-50 flex justify-center bg-opacity-80">
         <div class="desktop:max-w-[1200px] mobile:w-full mobile:px-5">
             <div class="flex justify-between items-center">
@@ -178,6 +205,8 @@
     var editorElement = document.querySelector(".ck-editor");
     var contentElement = document.querySelector(".ck-content");
     var toolbarElement = document.querySelector(".ck-toolbar");
+    var blurredElement = document.querySelector(".ck-blurred");
+
 
     if (editorContentElement) {
     // Function to apply styles based on current mode
@@ -186,14 +215,11 @@
             // Dark mode
             editorContentElement.style.borderBottomLeftRadius = "15px";
             editorContentElement.style.borderBottomRightRadius = "15px";
-            editorContentElement.style.backgroundColor = "#24192E";
-            editorContentElement.style.color = "#ffffff";
+
         } else {
             // Light mode
             editorContentElement.style.borderBottomLeftRadius = "15px";
             editorContentElement.style.borderBottomRightRadius = "15px";
-            editorContentElement.style.backgroundColor = "#f0f0f0";
-            editorContentElement.style.color = "#000000";
         }
     }
 
@@ -214,27 +240,6 @@
 }
 
 
-    if (editorContentElement) {
-        // Set border radius pada sudut bawah
-        editorContentElement.style.borderBottomLeftRadius = "15px";
-        editorContentElement.style.borderBottomRightRadius = "15px";
-        editorContentElement.style.backgroundColor = "#24192E";
-
-
-        // Tambahkan event listener untuk menangani fokus dan hilangnya fokus
-        editorContentElement.addEventListener("focus", function() {
-            editorContentElement.style.borderBottomLeftRadius = "15px";
-            editorContentElement.style.borderBottomRightRadius = "15px";
-            editorContentElement.style.backgroundColor = "#24192E";
-            editorContentElement.style.color = "#ffffff";
-        });
-
-        editorContentElement.addEventListener("blur", function() {
-            editorContentElement.style.borderBottomLeftRadius = "15px";
-            editorContentElement.style.borderBottomRightRadius = "15px";
-            editorContentElement.style.backgroundColor = "#24192E";
-        });
-    }
 
     if (stickyPanelContentElement) {
         // Matikan border pada elemen dengan kelas 'ck-sticky-panel__content'
@@ -257,7 +262,6 @@
         toolbarElement.style.borderTopLeftRadius = "15px";
         toolbarElement.style.borderTopRightRadius = "15px";
 
-        toolbarElement.style.border = "none";
     }
 });
 
